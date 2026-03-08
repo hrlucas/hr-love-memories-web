@@ -7,6 +7,9 @@
   <a href="https://www.linkedin.com/in/lucas-hochmann-rosa-456bb7339/">
     <img src="https://img.shields.io/badge/LinkedIn-Lucas_Hochmann_Rosa-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn Lucas Hochmann Rosa">
   </a>
+    <a href="https://hrlucas.github.io/hr-love-memories-web/">
+    <img src="https://img.shields.io/badge/Página-Web-2ea44f?style=for-the-badge" alt="Página Web">
+  </a>
   <a href="./LICENCE">
     <img src="https://img.shields.io/badge/Licença-MIT-2ea44f?style=for-the-badge" alt="Licença MIT">
   </a>
@@ -132,4 +135,5 @@ Consulte [LICENCE](./LICENCE).
 **Lucas Hochmann Rosa / hrlucas.dev**
 
 - GitHub: https://github.com/hrlucas
+- Pages: https://hrlucas.github.io/hr-love-memories-web/
 - LinkedIn: https://www.linkedin.com/in/lucas-hochmann-rosa-456bb7339/
