@@ -1,110 +1,135 @@
-﻿# hr-love-memories-web
+﻿# 🚀 hr-love-memories-web
 
 <p align="center">
   <a href="https://github.com/hrlucas">
-    <img src="https://img.shields.io/badge/GitHub-hrlucas-181717?style=for-the-badge&logo=github">
+    <img src="https://img.shields.io/badge/GitHub-hrlucas-181717?style=for-the-badge&logo=github" alt="GitHub hrlucas">
   </a>
   <a href="https://www.linkedin.com/in/lucas-hochmann-rosa-456bb7339/">
-    <img src="https://img.shields.io/badge/LinkedIn-Lucas_Hochmann_Rosa-0A66C2?style=for-the-badge&logo=linkedin">
+    <img src="https://img.shields.io/badge/LinkedIn-Lucas_Hochmann_Rosa-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn Lucas Hochmann Rosa">
   </a>
   <a href="./LICENCE">
-    <img src="https://img.shields.io/badge/License-MIT-2ea44f?style=for-the-badge">
+    <img src="https://img.shields.io/badge/Licença-MIT-2ea44f?style=for-the-badge" alt="Licença MIT">
   </a>
 </p>
 
-> Desenvolvido e estruturado por **Lucas Hochmann Rosa / hrlucas.dev** para o repositorio oficial: https://github.com/hrlucas/hr-love-memories-web
+> Experiência romântica que fiz para Maria Paula Rossetti Siqueira, estática em HTML, CSS/SCSS e JavaScript puro, com estética noturna, narrativa em capítulos e abertura floral cinematográfica.
 
 ---
 
-## Status do Projeto
+## 📌 Visão Geral
 
-**Em desenvolvimento.**
+O **hr-love-memories-web** foi estruturado como um presente digital interativo, com foco em performance, manutenção simples e execução 100% estática.
 
----
+Fluxo principal:
 
-## Visao Geral
-
-O **hr-love-memories-web** e uma experiencia visual romantica em HTML, CSS, SCSS e JavaScript puro, com foco em uma cena noturna de lirios rosas, folhas em tons azulados e particulas luminosas.
----
-
-## Funcionalidades
-
-- Cena principal em `pages/flower.html`.
-- Lirios rosas com folhas em tons de azul.
-- Particulas amarelas e rosas saindo das flores.
-- Animacoes de desabrochar, crescimento e movimento continuo.
-- Estrutura de pastas profissional separando `assets`, `pages` e `styles`.
-- Identificadores de codigo (classes, funcoes, variaveis e constantes) padronizados em portugues.
+- Tela de entrada com frase romântica e botão **Começar**.
+- Início da música local no segundo 23 após interação da usuária.
+- Revelação da experiência completa em página única.
+- Player fixo no topo para controle da mesma instância de áudio.
 
 ---
 
-## Arquitetura
+## 🧠 Funcionalidades
+
+- Abertura floral integrada diretamente à hero principal no index.
+- Navegação por âncoras (`Início`, `História`, `Galeria`, `Tempo`, `Carta`, `Meteoros`).
+- Timeline dinâmica com dados em JSON.
+- Galeria local com 45 imagens e layout responsivo.
+- Contador de tempo de relacionamento em tempo real.
+- Carta final com animação de envelope.
+- Seção de meteoros com frases e imagens animadas.
+- Player de música com `play/pause`, `volume +` e `volume -`.
+
+---
+
+## 🏗️ Estrutura do Projeto
 
 ```text
 hr-love-memories-web/
-|
-|-- README.md
-|-- LICENCE
-|-- .gitignore
-|-- pages/
-|   |-- flower.html
-|-- assets/
-|   |-- css/
-|   |   |-- main.css
-|   |   |-- main.css.map
-|   |   |-- style.css
-|   |-- js/
-|   |   |-- main.js
-|   |-- img/
-|       |-- flowers.png
-|-- styles/
-    |-- scss/
-        |-- main.scss
+├── index.html
+├── assets/
+│   ├── audio/
+│   │   └── Di Paullo e Paulino - No céu dos braços teus.mp3
+│   ├── css/
+│   │   ├── main.css
+│   │   ├── animations.css
+│   │   ├── sections.css
+│   │   └── responsive.css
+│   ├── data/
+│   │   ├── timeline.json
+│   │   ├── gallery.json
+│   │   └── letter.json
+│   ├── img/
+│   │   ├── flowers.png
+│   │   ├── decorative/
+│   │   └── gallery/
+│   │       └── provas-do-meu-amor/
+│   └── js/
+│       ├── main.js
+│       ├── intro.js
+│       ├── timeline.js
+│       ├── gallery.js
+│       ├── counter.js
+│       ├── effects.js
+│       └── meteor.js
+├── styles/
+│   └── scss/
+│       ├── main.scss
+│       ├── _variables.scss
+│       ├── _base.scss
+│       ├── _intro.scss
+│       ├── _timeline.scss
+│       ├── _gallery.scss
+│       ├── _counter.scss
+│       ├── _letter.scss
+│       ├── _effects.scss
+│       └── _responsive.scss
+├── LICENCE
+└── README.md
 ```
 
 ---
 
-## Tecnologias
+## 🛠️ Tecnologias
 
-- HTML5
-- CSS3
-- SCSS (Sass)
-- JavaScript (vanilla)
-
----
-
-## Requisitos
-
-- Navegador moderno (Chrome, Edge, Firefox, Brave ou Safari)
-- Opcional: servidor local estatico (Live Server, por exemplo)
+- HTML5 semântico
+- CSS3 + SCSS modular
+- JavaScript puro
+- JSON local para conteúdo dinâmico
 
 ---
 
-## Instalacao
+## ▶️ Execução Local
 
 ```bash
 git clone https://github.com/hrlucas/hr-love-memories-web.git
 cd hr-love-memories-web
+npx serve .
 ```
 
----
+Acesse:
 
-## Execucao
-
-1. Abra `pages/flower.html` no navegador.
-2. Opcionalmente rode com um servidor HTTP local para desenvolvimento.
+- `http://localhost:3000/index.html`
 
 ---
 
-## Creditos
+## 🌐 Publicação Estática (GitHub Pages)
 
-- Curadoria, organizacao profissional e atribuicoes: **Lucas Hochmann Rosa / hrlucas.dev**
-- Base artistica original da animacao floral: https://codepen.io/mdusmanansari/pen/BamepLe
+O projeto está pronto para publicação como site estático.
 
 ---
 
-## Licenca
+## 📄 Licença
 
-Licenciado sob MIT. Você pode usar, modificar e distribuir, mantendo o aviso de copyright e atribuindo crédito a Lucas Hochmann Rosa / hrlucas.dev.
+Licenciado sob MIT. Você pode usar, modificar e distribuir, mantendo o aviso de copyright e atribuindo crédito a **Lucas Hochmann Rosa / hrlucas.dev**.
 
-Consulte o arquivo [LICENCE](./LICENCE).
+Consulte [LICENCE](./LICENCE).
+
+---
+
+## 👨‍💻 Autor
+
+**Lucas Hochmann Rosa / hrlucas.dev**
+
+- GitHub: https://github.com/hrlucas
+- LinkedIn: https://www.linkedin.com/in/lucas-hochmann-rosa-456bb7339/

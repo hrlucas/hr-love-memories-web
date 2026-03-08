@@ -1,0 +1,13 @@
+﻿.contador {
+  margin-top: 2.2rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+
+  &__card {
+    padding: 1.2rem 1rem;
+    border-radius: 14px;
+    text-align: center;
+    background: linear-gradient(145deg, rgba(27, 16, 36, 0.95), rgba(75, 24, 50, 0.5));
+  }
+}

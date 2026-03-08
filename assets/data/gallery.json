@@ -1,0 +1,242 @@
+﻿{
+    "titulo":  "Nossa galeria",
+    "subtitulo":  "Cada foto guarda um instante. Cada instante guarda um pedaço do meu amor por você.",
+    "itens":  [
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/1-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 1",
+                      "caption":  "Meu dia sempre fica melhor quando você está nele."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/2-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 2",
+                      "caption":  "Alguns momentos passam rápido, mas os que vivo com você ficam para sempre."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/3-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 3",
+                      "caption":  "Estar ao seu lado é onde meu coração encontra paz."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/4-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 4",
+                      "caption":  "Entre todos os lugares do mundo, você é o meu favorito."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/5-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 5",
+                      "caption":  "Cada sorriso seu ilumina um pouco mais o meu caminho."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/6-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 6",
+                      "caption":  "As memórias mais bonitas da minha vida sempre têm você nelas."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/7-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 7",
+                      "caption":  "Quando estou com você, tudo parece mais leve e mais bonito."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/8-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 8",
+                      "caption":  "O melhor da vida é poder dividir cada instante com você."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/9-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 9",
+                      "caption":  "Se eu pudesse escolher qualquer momento para reviver, escolheria os que passei ao seu lado."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/10-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 10",
+                      "caption":  "Meu dia sempre fica melhor quando você está nele."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/11-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 11",
+                      "caption":  "Alguns momentos passam rápido, mas os que vivo com você ficam para sempre."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/12-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 12",
+                      "caption":  "Estar ao seu lado é onde meu coração encontra paz."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/13-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 13",
+                      "caption":  "Entre todos os lugares do mundo, você é o meu favorito."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/14-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 14",
+                      "caption":  "Cada sorriso seu ilumina um pouco mais o meu caminho."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/15-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 15",
+                      "caption":  "As memórias mais bonitas da minha vida sempre têm você nelas."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/16-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 16",
+                      "caption":  "Quando estou com você, tudo parece mais leve e mais bonito."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/17-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 17",
+                      "caption":  "O melhor da vida é poder dividir cada instante com você."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/18-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 18",
+                      "caption":  "Se eu pudesse escolher qualquer momento para reviver, escolheria os que passei ao seu lado."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/19-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 19",
+                      "caption":  "Meu dia sempre fica melhor quando você está nele."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/20-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 20",
+                      "caption":  "Alguns momentos passam rápido, mas os que vivo com você ficam para sempre."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/21-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 21",
+                      "caption":  "Estar ao seu lado é onde meu coração encontra paz."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/22-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 22",
+                      "caption":  "Entre todos os lugares do mundo, você é o meu favorito."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/23-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 23",
+                      "caption":  "Cada sorriso seu ilumina um pouco mais o meu caminho."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/24-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 24",
+                      "caption":  "As memórias mais bonitas da minha vida sempre têm você nelas."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/25-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 25",
+                      "caption":  "Quando estou com você, tudo parece mais leve e mais bonito."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/26-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 26",
+                      "caption":  "O melhor da vida é poder dividir cada instante com você."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/27-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 27",
+                      "caption":  "Se eu pudesse escolher qualquer momento para reviver, escolheria os que passei ao seu lado."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/28-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 28",
+                      "caption":  "Meu dia sempre fica melhor quando você está nele."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/29-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 29",
+                      "caption":  "Alguns momentos passam rápido, mas os que vivo com você ficam para sempre."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/30-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 30",
+                      "caption":  "Estar ao seu lado é onde meu coração encontra paz."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/31-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 31",
+                      "caption":  "Entre todos os lugares do mundo, você é o meu favorito."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/32-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 32",
+                      "caption":  "Cada sorriso seu ilumina um pouco mais o meu caminho."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/33-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 33",
+                      "caption":  "As memórias mais bonitas da minha vida sempre têm você nelas."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/34-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 34",
+                      "caption":  "Quando estou com você, tudo parece mais leve e mais bonito."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/35-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 35",
+                      "caption":  "O melhor da vida é poder dividir cada instante com você."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/36-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 36",
+                      "caption":  "Se eu pudesse escolher qualquer momento para reviver, escolheria os que passei ao seu lado."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/37-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 37",
+                      "caption":  "Meu dia sempre fica melhor quando você está nele."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/38-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 38",
+                      "caption":  "Alguns momentos passam rápido, mas os que vivo com você ficam para sempre."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/39-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 39",
+                      "caption":  "Estar ao seu lado é onde meu coração encontra paz."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/40-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 40",
+                      "caption":  "Entre todos os lugares do mundo, você é o meu favorito."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/41-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 41",
+                      "caption":  "Cada sorriso seu ilumina um pouco mais o meu caminho."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/42-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 42",
+                      "caption":  "As memórias mais bonitas da minha vida sempre têm você nelas."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/43-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 43",
+                      "caption":  "Quando estou com você, tudo parece mais leve e mais bonito."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/44-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 44",
+                      "caption":  "O melhor da vida é poder dividir cada instante com você."
+                  },
+                  {
+                      "src":  "assets/img/gallery/provas-do-meu-amor/45-prova-do-meu-amor-por-voce.jpg",
+                      "alt":  "Prova do meu amor por você 45",
+                      "caption":  "Se eu pudesse escolher qualquer momento para reviver, escolheria os que passei ao seu lado."
+                  }
+              ],
+    "frasesLinhas":  [
+                         "Meu dia sempre fica melhor quando você está nele.",
+                         "Alguns momentos passam rápido, mas os que vivo com você ficam para sempre.",
+                         "Estar ao seu lado é onde meu coração encontra paz.",
+                         "Entre todos os lugares do mundo, você é o meu favorito.",
+                         "Cada sorriso seu ilumina um pouco mais o meu caminho.",
+                         "As memórias mais bonitas da minha vida sempre têm você nelas.",
+                         "Quando estou com você, tudo parece mais leve e mais bonito.",
+                         "O melhor da vida é poder dividir cada instante com você.",
+                         "Se eu pudesse escolher qualquer momento para reviver, escolheria os que passei ao seu lado."
+                     ]
+}

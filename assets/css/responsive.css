@@ -1,0 +1,258 @@
+﻿@media (max-width: 1280px) {
+  .galeria {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .timeline-escada__card {
+    grid-column: 1 / span 8;
+  }
+
+  .timeline-escada__card:nth-child(even) {
+    grid-column: 5 / span 8;
+  }
+}
+
+@media (max-width: 1080px) {
+  .galeria {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .contador {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .secao {
+    padding: 6.3rem 1rem;
+  }
+
+  .envelope-cena {
+    margin-top: 1rem;
+    min-height: 760px;
+  }
+
+  #letter.secao--carta-aberta .envelope-cena {
+    margin-top: 4.8rem;
+    min-height: 1080px;
+  }
+
+  .envelope {
+    width: min(640px, 86vw);
+  }
+
+  .carta {
+    width: min(92vw, 900px);
+    max-height: none;
+    overflow: visible;
+    transform: translate3d(-50%, 56%, 0) scale(0.95);
+  }
+
+  .envelope-cena--aberto .carta {
+    transform: translate3d(-50%, 8%, 0) scale(1);
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --altura-navbar: 108px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.55rem;
+  }
+
+  .navbar__menu {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .hero__conteudo {
+    padding: 6.4rem 1rem 5rem;
+  }
+
+  .timeline-escada {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-escada::before,
+  .timeline-escada__card::before,
+  .timeline-escada__card::after {
+    display: none;
+  }
+
+  .timeline-escada__card,
+  .timeline-escada__card:nth-child(even),
+  .timeline-escada__card:hover,
+  .timeline-escada__card:focus-within {
+    grid-column: 1;
+    margin-top: 0;
+    transform: none !important;
+  }
+
+  .timeline__encerramento {
+    font-size: clamp(0.74rem, 2.8vw, 0.9rem);
+    white-space: nowrap;
+  }
+
+  .resumo-namoro {
+    gap: 0.75rem;
+  }
+
+  .envelope-cena {
+    min-height: 700px;
+  }
+
+  #letter.secao--carta-aberta .envelope-cena {
+    margin-top: 4.2rem;
+    min-height: 980px;
+  }
+
+  .botao-amor--carta {
+    bottom: 7%;
+  }
+
+  .envelope-cena--aberto .botao-amor--carta {
+    bottom: 2.4%;
+  }
+
+  .secao--meteoros {
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 680px) {
+  .secao {
+    padding: 5.7rem 0.85rem;
+  }
+
+  .hero__subtitulo,
+  .secao__texto {
+    font-size: 0.98rem;
+  }
+
+  .galeria {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .galeria__frase-linha,
+  .galeria > p[data-frase-linha] {
+    font-size: 0.96rem;
+    gap: 0.65rem;
+  }
+
+  .resumo-namoro {
+    grid-template-columns: 1fr;
+  }
+
+  .carta {
+    width: min(94vw, 720px);
+    max-height: none;
+    overflow: visible;
+    padding: 1.2rem 1.05rem;
+  }
+
+  .envelope-cena {
+    min-height: 660px;
+  }
+
+  #letter.secao--carta-aberta .envelope-cena {
+    margin-top: 3.8rem;
+    min-height: 920px;
+  }
+
+  .botao-amor--carta {
+    min-width: 160px;
+    bottom: 6%;
+  }
+
+  .meteoro-imagem {
+    width: 72px;
+  }
+}
+
+@media (max-width: 460px) {
+  .navbar__menu a {
+    font-size: 0.82rem;
+    padding: 0.32rem 0.52rem;
+  }
+
+  .hero__conteudo {
+    padding-top: 5.6rem;
+  }
+
+  .botao-amor,
+  .botao-secundario {
+    width: 100%;
+    max-width: 290px;
+  }
+
+  .contador {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .carta {
+    width: min(95vw, 560px);
+    max-height: none;
+    overflow: visible;
+  }
+
+  .envelope-cena {
+    min-height: 620px;
+  }
+
+  #letter.secao--carta-aberta .envelope-cena {
+    margin-top: 3.3rem;
+    min-height: 860px;
+  }
+
+  .botao-amor--carta {
+    min-width: 150px;
+    bottom: 5.4%;
+  }
+}
+@media (max-width: 900px) {
+  .floating-music-player {
+    position: static;
+    transform: none;
+    width: min(94vw, 460px);
+    margin: 0.2rem auto 0;
+    order: 3;
+  }
+
+  .player-musica--oculto {
+    transform: none;
+  }
+
+  .intro-card {
+    width: min(94vw, 760px);
+    padding: 1.5rem 1.25rem;
+  }
+
+  .intro-card__frase {
+    font-size: clamp(1.25rem, 4.4vw, 2rem);
+  }
+}
+
+@media (max-width: 520px) {
+  .floating-music-player {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.55rem;
+    padding: 0.55rem 0.65rem;
+  }
+
+  .floating-music-player__meta {
+    text-align: center;
+  }
+
+  .floating-music-player__controles {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .intro-card__botao {
+    width: 100%;
+  }
+}

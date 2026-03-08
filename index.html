@@ -1,0 +1,374 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Presente digital romântico para Maria Paula Rossetti Siqueira em estética noturna."
+    />
+    <title>HR - Jardim do nosso amor</title>
+    <link rel="icon" href="assets/img/flowers.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Great+Vibes&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/animations.css" />
+    <link rel="stylesheet" href="assets/css/sections.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+  </head>
+  <body class="pagina-memorias experiencia-bloqueada">
+    <div
+      id="introGate"
+      class="intro-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="introGateFrase"
+    >
+      <div class="intro-card">
+        <p id="introGateFrase" class="intro-card__frase">
+          “Antes de tudo, deixa eu te mostrar algo que sempre me lembra você”
+        </p>
+        <button
+          id="startExperience"
+          class="botao-amor intro-card__botao"
+          type="button"
+          aria-label="Começar experiência romântica"
+        >
+          Começar
+        </button>
+      </div>
+    </div>
+    <div
+      class="plano-particulas"
+      id="plano-particulas"
+      aria-hidden="true"
+    ></div>
+
+    <header class="navbar" aria-label="Cabecalho do projeto">
+      <a class="navbar__marca" href="#hero">hr-love-memories-web</a>
+      <div
+        id="floatingMusicPlayer"
+        class="floating-music-player player-musica--oculto"
+        aria-label="Player de música romântica"
+        aria-hidden="true"
+      >
+        <div class="floating-music-player__meta">
+          <strong>No céu dos braços teus</strong>
+          <span>Di Paullo e Paulino</span>
+        </div>
+        <div class="floating-music-player__controles">
+          <button
+            id="playerVolumeDown"
+            type="button"
+            aria-label="Diminuir volume"
+          >
+            −
+          </button>
+          <button id="playerPlayPause" type="button" aria-label="Pausar música">
+            Pausar
+          </button>
+          <button
+            id="playerVolumeUp"
+            type="button"
+            aria-label="Aumentar volume"
+          >
+            +
+          </button>
+        </div>
+      </div>
+      <nav class="navbar__menu" aria-label="Navegacao principal">
+        <a href="#hero">Início</a>
+        <a href="#timeline">História</a>
+        <a href="#gallery">Galeria</a>
+        <a href="#counter">Tempo</a>
+        <a href="#letter">Carta</a>
+        <a href="#meteor">Meteoros</a>
+      </nav>
+    </header>
+
+    <section id="hero" class="intro-floral" aria-labelledby="titulo-hero">
+      <div class="intro-floral__cena" aria-hidden="true">
+        <div class="noite"></div>
+        <div class="lirios">
+          <div class="lirio lirio--1">
+            <div class="lirio__folhas lirio__folhas--1">
+              <div class="lirio__folha lirio__folha--1"></div>
+              <div class="lirio__folha lirio__folha--2"></div>
+              <div class="lirio__folha lirio__folha--3"></div>
+              <div class="lirio__folha lirio__folha--4"></div>
+              <div class="lirio__miolo-branco"></div>
+              <div class="lirio__brilho lirio__brilho--1"></div>
+              <div class="lirio__brilho lirio__brilho--2"></div>
+              <div class="lirio__brilho lirio__brilho--3"></div>
+              <div class="lirio__brilho lirio__brilho--4"></div>
+              <div class="lirio__brilho lirio__brilho--5"></div>
+              <div class="lirio__brilho lirio__brilho--6"></div>
+              <div class="lirio__brilho lirio__brilho--7"></div>
+              <div class="lirio__brilho lirio__brilho--8"></div>
+            </div>
+            <div class="lirio__haste">
+              <div class="lirio__haste__folha lirio__haste__folha--1"></div>
+              <div class="lirio__haste__folha lirio__haste__folha--2"></div>
+              <div class="lirio__haste__folha lirio__haste__folha--3"></div>
+              <div class="lirio__haste__folha lirio__haste__folha--4"></div>
+              <div class="lirio__haste__folha lirio__haste__folha--5"></div>
+              <div class="lirio__haste__folha lirio__haste__folha--6"></div>
+            </div>
+          </div>
+
+          <div class="lirio lirio--2">
+            <div class="lirio__folhas lirio__folhas--2">
+              <div class="lirio__folha lirio__folha--1"></div>
+              <div class="lirio__folha lirio__folha--2"></div>
+              <div class="lirio__folha lirio__folha--3"></div>
+              <div class="lirio__folha lirio__folha--4"></div>
+              <div class="lirio__miolo-branco"></div>
+              <div class="lirio__brilho lirio__brilho--1"></div>
+              <div class="lirio__brilho lirio__brilho--2"></div>
+              <div class="lirio__brilho lirio__brilho--3"></div>
+              <div class="lirio__brilho lirio__brilho--4"></div>
+              <div class="lirio__brilho lirio__brilho--5"></div>
+              <div class="lirio__brilho lirio__brilho--6"></div>
+              <div class="lirio__brilho lirio__brilho--7"></div>
+              <div class="lirio__brilho lirio__brilho--8"></div>
+            </div>
+            <div class="lirio__haste">
+              <div class="lirio__haste__folha lirio__haste__folha--1"></div>
+              <div class="lirio__haste__folha lirio__haste__folha--2"></div>
+              <div class="lirio__haste__folha lirio__haste__folha--3"></div>
+              <div class="lirio__haste__folha lirio__haste__folha--4"></div>
+            </div>
+          </div>
+
+          <div class="lirio lirio--3">
+            <div class="lirio__folhas lirio__folhas--3">
+              <div class="lirio__folha lirio__folha--1"></div>
+              <div class="lirio__folha lirio__folha--2"></div>
+              <div class="lirio__folha lirio__folha--3"></div>
+              <div class="lirio__folha lirio__folha--4"></div>
+              <div class="lirio__miolo-branco"></div>
+              <div class="lirio__brilho lirio__brilho--1"></div>
+              <div class="lirio__brilho lirio__brilho--2"></div>
+              <div class="lirio__brilho lirio__brilho--3"></div>
+              <div class="lirio__brilho lirio__brilho--4"></div>
+              <div class="lirio__brilho lirio__brilho--5"></div>
+              <div class="lirio__brilho lirio__brilho--6"></div>
+              <div class="lirio__brilho lirio__brilho--7"></div>
+              <div class="lirio__brilho lirio__brilho--8"></div>
+            </div>
+            <div class="lirio__haste">
+              <div class="lirio__haste__folha lirio__haste__folha--1"></div>
+              <div class="lirio__haste__folha lirio__haste__folha--2"></div>
+              <div class="lirio__haste__folha lirio__haste__folha--3"></div>
+              <div class="lirio__haste__folha lirio__haste__folha--4"></div>
+            </div>
+          </div>
+
+          <div class="grama-crescendo">
+            <div class="lirio__grama lirio__grama--1">
+              <div class="lirio__grama--topo"></div>
+              <div class="lirio__grama--base"></div>
+              <div class="lirio__grama__folha lirio__grama__folha--1"></div>
+              <div class="lirio__grama__folha lirio__grama__folha--2"></div>
+              <div class="lirio__grama__folha lirio__grama__folha--3"></div>
+              <div class="lirio__grama__folha lirio__grama__folha--4"></div>
+              <div class="lirio__grama__folha lirio__grama__folha--5"></div>
+              <div class="lirio__grama__folha lirio__grama__folha--6"></div>
+              <div class="lirio__grama__folha lirio__grama__folha--7"></div>
+              <div class="lirio__grama__folha lirio__grama__folha--8"></div>
+              <div class="lirio__grama__sobreposicao"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__conteudo revelar">
+        <p class="hero__selo">08 de março • Dia da Mulher</p>
+        <h1 id="titulo-hero">Maria Paula Rossetti Siqueira</h1>
+        <p class="hero__frase">A mulher da minha vida</p>
+        <p class="hero__subtitulo">
+          Hoje é o seu dia, mas todos os meus dias são mais bonitos por causa de
+          você.
+        </p>
+        <button id="botao-amote" class="botao-amor" type="button">
+          Amo-te
+        </button>
+      </div>
+    </section>
+
+    <section
+      id="timeline"
+      class="secao secao--historia revelar"
+      aria-labelledby="titulo-timeline"
+    >
+      <div class="secao__container">
+        <h2 id="titulo-timeline">Nossa história</h2>
+        <p class="secao__texto" id="timeline-subtitulo">
+          Algumas datas que mostram o quanto amar você se tornou parte de mim.
+        </p>
+        <div class="timeline-escada" id="timeline-list"></div>
+        <p class="timeline__encerramento" id="timeline-encerramento"></p>
+      </div>
+    </section>
+
+    <section
+      id="gallery"
+      class="secao secao--galeria revelar"
+      aria-labelledby="titulo-gallery"
+    >
+      <div class="secao__container">
+        <h2 id="titulo-gallery">Nossa galeria</h2>
+        <p class="secao__texto" id="galeria-subtitulo">
+          Cada foto guarda um instante. Cada instante guarda um pedaço do meu
+          amor por você.
+        </p>
+        <div class="galeria" id="gallery-grid"></div>
+      </div>
+    </section>
+
+    <section
+      id="counter"
+      class="secao secao--tempo revelar"
+      aria-labelledby="titulo-counter"
+    >
+      <div class="tempo-coracoes" id="tempo-coracoes" aria-hidden="true"></div>
+      <div class="secao__container">
+        <h2 id="titulo-counter">
+          Há quanto tempo eu tenho a sorte de amar você
+        </h2>
+        <p class="secao__texto">Desde 24/09/2024</p>
+        <div class="contador" id="contador">
+          <article class="contador__card">
+            <p class="contador__valor" id="contador-dias">0</p>
+            <p class="contador__rotulo">Dias</p>
+          </article>
+          <article class="contador__card">
+            <p class="contador__valor" id="contador-horas">00</p>
+            <p class="contador__rotulo">Horas</p>
+          </article>
+          <article class="contador__card">
+            <p class="contador__valor" id="contador-minutos">00</p>
+            <p class="contador__rotulo">Minutos</p>
+          </article>
+          <article class="contador__card">
+            <p class="contador__valor" id="contador-segundos">00</p>
+            <p class="contador__rotulo">Segundos</p>
+          </article>
+        </div>
+        <article class="resumo-namoro revelar" id="resumo-namoro">
+          <div class="resumo-namoro__item">
+            <p class="resumo-namoro__valor" id="resumo-anos">0</p>
+            <p class="resumo-namoro__rotulo">Anos</p>
+          </div>
+          <div class="resumo-namoro__item">
+            <p class="resumo-namoro__valor" id="resumo-meses">0</p>
+            <p class="resumo-namoro__rotulo">Meses</p>
+          </div>
+          <div class="resumo-namoro__item">
+            <p class="resumo-namoro__valor" id="resumo-dias">0</p>
+            <p class="resumo-namoro__rotulo">Dias</p>
+          </div>
+        </article>
+        <p class="secao__texto secao__texto--final">
+          E a cada segundo, amar você continua sendo a melhor parte da minha
+          vida.
+        </p>
+      </div>
+    </section>
+
+    <section
+      id="letter"
+      class="secao secao--carta revelar"
+      aria-labelledby="titulo-letter"
+    >
+      <div class="secao__container">
+        <h2 id="titulo-letter">Uma carta para você</h2>
+        <p class="carta__selo-fixo" id="carta-selo">
+          08 de março · Dia da Mulher
+        </p>
+
+        <div class="envelope-cena" id="envelope-cena">
+          <div class="envelope" aria-hidden="true">
+            <div class="envelope__topo"></div>
+            <div class="envelope__frente"></div>
+            <div class="envelope__lateral envelope__lateral--esquerda"></div>
+            <div class="envelope__lateral envelope__lateral--direita"></div>
+          </div>
+
+          <article class="carta" id="carta">
+            <div class="carta__conteudo" id="carta-conteudo"></div>
+            <p class="carta__assinatura" id="carta-assinatura"></p>
+          </article>
+          <button
+            id="botao-abrir-carta"
+            class="botao-amor botao-amor--carta"
+            type="button"
+          >
+            Abrir carta
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="meteor"
+      class="secao secao--meteoros revelar"
+      aria-labelledby="titulo-meteor"
+    >
+      <div class="meteoros-cena" id="meteoros-cena" aria-hidden="true"></div>
+      <div class="secao__container secao__container--meteoros">
+        <h2 id="titulo-meteor">Nosso céu em movimento</h2>
+        <p class="secao__texto">
+          Frases e lembranças cruzando o universo do que sinto por você.
+        </p>
+      </div>
+    </section>
+
+    <footer class="encerramento revelar">
+      <p>Obrigado por existir na minha vida, Maria.</p>
+      <button id="voltar-inicio" class="botao-secundario" type="button">
+        Voltar ao início
+      </button>
+    </footer>
+
+    <div
+      class="lightbox"
+      id="lightbox"
+      hidden
+      aria-hidden="true"
+      role="dialog"
+      aria-label="Visualização da foto"
+    >
+      <button
+        class="lightbox__fechar"
+        id="lightbox-fechar"
+        type="button"
+        aria-label="Fechar visualização"
+      >
+        ×
+      </button>
+      <figure class="lightbox__figura">
+        <img id="lightbox-imagem" src="" alt="" />
+        <figcaption id="lightbox-legenda"></figcaption>
+      </figure>
+    </div>
+
+    <audio
+      id="globalLoveSong"
+      preload="metadata"
+      src="assets/audio/Di Paullo e Paulino - No céu dos braços teus.mp3"
+    ></audio>
+
+    <script src="assets/js/intro.js" defer></script>
+    <script src="assets/js/timeline.js" defer></script>
+    <script src="assets/js/gallery.js" defer></script>
+    <script src="assets/js/counter.js" defer></script>
+    <script src="assets/js/effects.js" defer></script>
+    <script src="assets/js/meteor.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+  </body>
+</html>

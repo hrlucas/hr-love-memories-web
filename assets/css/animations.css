@@ -1,0 +1,73 @@
+﻿.revelar {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition-delay: var(--atraso, 0ms);
+}
+
+.revelar.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.particula-luz {
+  animation-name: particula-flutuante;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.botao-amor,
+.botao-secundario {
+  animation: pulsar-glow 3.2s ease-in-out infinite;
+}
+
+@keyframes particula-flutuante {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.25;
+  }
+
+  35% {
+    transform: translate3d(8px, -14px, 0) scale(1.25);
+    opacity: 0.72;
+  }
+
+  70% {
+    transform: translate3d(-6px, -30px, 0) scale(0.95);
+    opacity: 0.45;
+  }
+}
+
+@keyframes pulsar-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(243, 214, 228, 0.15), 0 8px 18px rgba(0, 0, 0, 0.28);
+  }
+
+  50% {
+    box-shadow: 0 0 22px rgba(243, 214, 228, 0.35), 0 14px 30px rgba(0, 0, 0, 0.34);
+  }
+}
+
+@keyframes brilho-carta {
+  0%,
+  100% {
+    border-color: rgba(247, 231, 198, 0.2);
+  }
+
+  50% {
+    border-color: rgba(247, 231, 198, 0.42);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}

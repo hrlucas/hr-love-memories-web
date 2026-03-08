@@ -1,10 +1,4 @@
-﻿/*
-  Projeto: hr-love-memories-web
-  Autor: Lucas Hochmann Rosa / hrlucas.dev
-  Repositorio: https://github.com/hrlucas/hr-love-memories-web
-  Base da animacao floral: https://codepen.io/mdusmanansari/pen/BamepLe
-*/
-*,
+﻿*,
 *::after,
 *::before {
   padding: 0;
@@ -13,24 +7,47 @@
 }
 
 :root {
-  --cor-escura: #000;
+  --cor-escura: #080b16;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--cor-escura);
+  overflow-x: hidden;
+  overflow-y: auto;
+  color: #f3d6e4;
+  font-family: "Inter", sans-serif;
+}
+
+.intro-floral {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.intro-floral__cena {
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  min-height: 100vh;
-  background-color: var(--cor-escura);
   overflow: hidden;
-  perspective: 1000px;
+  pointer-events: none;
 }
 
 .noite {
-  position: fixed;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   filter: blur(0.1vmin);
@@ -42,7 +59,7 @@ body {
     radial-gradient(
       ellipse at bottom,
       var(--cor-escura),
-      rgba(145, 233, 255, 0.2)
+      rgba(255, 157, 205, 0.2)
     ),
     repeating-linear-gradient(
       220deg,
@@ -65,14 +82,15 @@ body {
       transparent 19px,
       transparent 22px
     ),
-    linear-gradient(90deg, rgb(0, 255, 250), rgb(240, 240, 240));
+    linear-gradient(90deg, rgb(255, 122, 191), rgb(240, 240, 240));
 }
 
 .lirios {
-  position: relative;
-  transform: scale(0.9);
+  position: absolute;
+  left: 50%;
+  bottom: -1vmin;
+  transform: translateX(-50%) scale(0.9);
 }
-
 .lirio {
   position: absolute;
   bottom: 10vmin;
@@ -193,7 +211,7 @@ body {
       transform: translate(-50%, -100%);
       width: 8vmin;
       height: 8vmin;
-      background-color: #6bf0ff;
+      background-color: #ff9dd1;
       filter: blur(10vmin);
     }
   }
@@ -205,8 +223,8 @@ body {
     width: 8vmin;
     height: 11vmin;
     border-radius: 51% 49% 47% 53% / 44% 45% 55% 69%;
-    background-color: #a7ffee;
-    background-image: linear-gradient(to top, #54b8aa, #a7ffee);
+    background-color: #ffd1e8;
+    background-image: linear-gradient(to top, #e979b2, #ffd1e8);
     transform-origin: bottom center;
     opacity: 0.9;
     box-shadow: inset 0 0 2vmin rgba(255, 255, 255, 0.5);
@@ -229,7 +247,7 @@ body {
       transform-origin: bottom left;
       border-radius: 4vmin 10vmin 4vmin 4vmin;
       transform: translate(-0%, 18%) rotateX(70deg) rotate(-43deg);
-      background-image: linear-gradient(to top, #39c6d6, #a7ffee);
+      background-image: linear-gradient(to top, #ff7eb8, #ffd1e8);
       z-index: 1;
       opacity: 0.8;
     }
@@ -371,7 +389,7 @@ body {
         transparent,
         rgba(255, 255, 255, 0.2)
       ),
-      linear-gradient(to top, transparent 10%, #14757a, #39c6d6);
+      linear-gradient(to top, transparent 10%, #8f3a6b, #ff7eb8);
     box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
     animation: crescer-caule-lirio 4s backwards;
 
@@ -387,8 +405,8 @@ body {
       border-bottom-left-radius: var(--altura);
       background-image: linear-gradient(
         to top,
-        rgba(20, 117, 122, 0.4),
-        #39c6d6
+        rgba(47, 155, 98, 0.4),
+        #ff7eb8
       );
 
       &--1 {
@@ -436,7 +454,7 @@ body {
     bottom: 0vmin;
     width: 1vmin;
     height: 1vmin;
-    background-color: rgb(255, 251, 0);
+    background-color: rgb(255, 180, 218);
     border-radius: 50%;
     filter: blur(0.2vmin);
     animation: brilho-animacao 4s linear infinite backwards;
@@ -487,7 +505,7 @@ body {
   }
 
   &__grama {
-    --cor: #159faa;
+    --cor: #2f9b62;
     --largura-haste: 1.5vmin;
 
     position: absolute;
@@ -674,7 +692,7 @@ body {
   &__galho-longo {
     --largura: 2vmin;
     --altura: 6vmin;
-    --cor: #159faa;
+    --cor: #2f9b62;
     position: absolute;
     bottom: 10vmin;
     left: -3vmin;
@@ -726,13 +744,13 @@ body {
       width: 30vmin;
       height: 50vmin;
       border-top-left-radius: 100%;
-      border-left: 2vmin solid #079097;
+      border-left: 2vmin solid #267a4a;
       background-image: linear-gradient(
         to bottom,
         transparent,
         var(--cor-escura) 60%
       );
-      -webkit-mask-image: linear-gradient(to top, transparent 30%, #079097 60%);
+      -webkit-mask-image: linear-gradient(to top, transparent 30%, #267a4a 60%);
     }
 
     &--1 {
@@ -799,7 +817,7 @@ body {
       background-image: linear-gradient(
         to top,
         transparent,
-        #079097,
+        #267a4a,
         transparent 100%
       );
       position: relative;
@@ -902,7 +920,7 @@ body {
       width: 10vmin;
       height: 10vmin;
       border-radius: 100% 0% 0% 100% / 100% 100% 0% 0%;
-      box-shadow: inset 0 2px 1vmin hsla(184, 97%, 58%, 0.2);
+      box-shadow: inset 0 2px 1vmin hsla(330, 92%, 74%, 0.25);
       background-image: linear-gradient(
           to bottom left,
           transparent,
@@ -910,20 +928,20 @@ body {
         ),
         linear-gradient(
           to bottom right,
-          #159faa 50%,
+          #2f9b62 50%,
           transparent 50%,
           transparent
         );
 
       -webkit-mask-image: linear-gradient(
         to bottom right,
-        #159faa 50%,
+        #2f9b62 50%,
         transparent 50%,
         transparent
       );
       mask-image: linear-gradient(
         to bottom right,
-        #159faa 50%,
+        #2f9b62 50%,
         transparent 50%,
         transparent
       );
@@ -953,8 +971,8 @@ body {
       width: 30vmin;
       height: 50vmin;
       border-top-left-radius: 100%;
-      border-left: 2vmin solid #079097;
-      -webkit-mask-image: linear-gradient(to top, transparent 25%, #079097 50%);
+      border-left: 2vmin solid #267a4a;
+      -webkit-mask-image: linear-gradient(to top, transparent 25%, #267a4a 50%);
       position: relative;
       z-index: 1;
     }
@@ -966,7 +984,7 @@ body {
       width: 10vmin;
       height: 10vmin;
       border-radius: 100% 0% 0% 100% / 100% 100% 0% 0%;
-      box-shadow: inset 0 2px 1vmin hsla(184, 97%, 58%, 0.2);
+      box-shadow: inset 0 2px 1vmin hsla(330, 92%, 74%, 0.25);
       background-image: linear-gradient(
           to bottom left,
           transparent,
@@ -974,14 +992,14 @@ body {
         ),
         linear-gradient(
           to bottom right,
-          #23f0ff 45%,
+          #ff8dc5 45%,
           transparent 50%,
           transparent
         );
 
       -webkit-mask-image: linear-gradient(
         135deg,
-        #159faa 40%,
+        #2f9b62 40%,
         transparent 50%,
         transparent
       );
@@ -990,9 +1008,9 @@ body {
         left: 20vmin;
         transform: rotate(45deg);
 
-        animation: lirio__galho-frente-folha-ans-1 0.5s 5.2s linear backwards;
+        animation: lirio__galho-frente-folha-animacao-1 0.5s 5.2s linear backwards;
 
-        @keyframes lirio__galho-frente-folha-ans-1 {
+        @keyframes lirio__galho-frente-folha-animacao-1 {
           0% {
             transform-origin: left;
             transform: rotate(45deg) scale(0);
@@ -1004,30 +1022,30 @@ body {
         left: 12vmin;
         top: -7vmin;
         transform: rotate(25deg) rotateY(-180deg);
-        animation: lirio__galho-frente-folha-ans-6 0.5s 5s linear backwards;
+        animation: lirio__galho-frente-folha-animacao-6 0.5s 5s linear backwards;
       }
 
       &--3 {
         left: 15vmin;
         top: 6vmin;
         transform: rotate(55deg);
-        animation: lirio__galho-frente-folha-ans-5 0.5s 4.8s linear backwards;
+        animation: lirio__galho-frente-folha-animacao-5 0.5s 4.8s linear backwards;
       }
 
       &--4 {
         left: 6vmin;
         top: -2vmin;
         transform: rotate(25deg) rotateY(-180deg);
-        animation: lirio__galho-frente-folha-ans-6 0.5s 4.6s linear backwards;
+        animation: lirio__galho-frente-folha-animacao-6 0.5s 4.6s linear backwards;
       }
 
       &--5 {
         left: 10vmin;
         top: 14vmin;
         transform: rotate(55deg);
-        animation: lirio__galho-frente-folha-ans-5 0.5s 4.4s linear backwards;
+        animation: lirio__galho-frente-folha-animacao-5 0.5s 4.4s linear backwards;
 
-        @keyframes lirio__galho-frente-folha-ans-5 {
+        @keyframes lirio__galho-frente-folha-animacao-5 {
           0% {
             transform-origin: left;
             transform: rotate(55deg) scale(0);
@@ -1039,9 +1057,9 @@ body {
         left: 0vmin;
         top: 6vmin;
         transform: rotate(25deg) rotateY(-180deg);
-        animation: lirio__galho-frente-folha-ans-6 0.5s 4.2s linear backwards;
+        animation: lirio__galho-frente-folha-animacao-6 0.5s 4.2s linear backwards;
 
-        @keyframes lirio__galho-frente-folha-ans-6 {
+        @keyframes lirio__galho-frente-folha-animacao-6 {
           0% {
             transform-origin: right;
             transform: rotate(25deg) rotateY(-180deg) scale(0);
@@ -1053,9 +1071,9 @@ body {
         left: 5vmin;
         top: 22vmin;
         transform: rotate(45deg);
-        animation: lirio__galho-frente-folha-ans-7 0.5s 4s linear backwards;
+        animation: lirio__galho-frente-folha-animacao-7 0.5s 4s linear backwards;
 
-        @keyframes lirio__galho-frente-folha-ans-7 {
+        @keyframes lirio__galho-frente-folha-animacao-7 {
           0% {
             transform-origin: left;
             transform: rotate(45deg) scale(0);
@@ -1067,9 +1085,9 @@ body {
         left: -4vmin;
         top: 15vmin;
         transform: rotate(15deg) rotateY(-180deg);
-        animation: lirio__galho-frente-folha-ans-8 0.5s 3.8s linear backwards;
+        animation: lirio__galho-frente-folha-animacao-8 0.5s 3.8s linear backwards;
 
-        @keyframes lirio__galho-frente-folha-ans-8 {
+        @keyframes lirio__galho-frente-folha-animacao-8 {
           0% {
             transform-origin: right;
             transform: rotate(15deg) rotateY(-180deg) scale(0);
@@ -1094,7 +1112,7 @@ body {
       -webkit-mask-image: linear-gradient(
         to top,
         transparent 40%,
-        #079097 80%
+        #267a4a 80%
       ) !important;
 
       &--1 {
@@ -1117,7 +1135,7 @@ body {
       -webkit-mask-image: linear-gradient(
         to top,
         transparent 50%,
-        #079097 80%
+        #267a4a 80%
       ) !important;
 
       &--1 {
@@ -1134,7 +1152,7 @@ body {
       -webkit-mask-image: linear-gradient(
         to top,
         transparent 40%,
-        #079097 80%
+        #267a4a 80%
       ) !important;
     }
   }
@@ -1149,7 +1167,7 @@ body {
       -webkit-mask-image: linear-gradient(
         to top,
         transparent 50%,
-        #079097 80%
+        #267a4a 80%
       ) !important;
     }
   }
@@ -1397,7 +1415,6 @@ body {
 .conteiner * {
   animation-play-state: paused !important;
 }
-
 
 
 
