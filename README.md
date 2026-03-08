@@ -8,7 +8,7 @@
     <img src="https://img.shields.io/badge/LinkedIn-Lucas_Hochmann_Rosa-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn Lucas Hochmann Rosa">
   </a>
     <a href="https://hrlucas.github.io/hr-love-memories-web/">
-    <img src="https://img.shields.io/badge/Página-Web-2ea44f?style=for-the-badge" alt="Página Web">
+    <img src="https://img.shields.io/badge/Página-Web-ff69b4?style=for-the-badge" alt="Página Web">
   </a>
   <a href="./LICENCE">
     <img src="https://img.shields.io/badge/Licença-MIT-2ea44f?style=for-the-badge" alt="Licença MIT">
