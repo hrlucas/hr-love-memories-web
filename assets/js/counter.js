@@ -1,78 +1,78 @@
-﻿(function () {
-  var referenciaRelacionamento = new Date('2024-09-24T00:00:00-03:00');
+(function () {
+  var relationshipStart = new Date('2024-09-24T00:00:00-03:00');
 
-  function formatarNumero(numero) {
-    return String(numero).padStart(2, '0');
+  function formatNumber(number) {
+    return String(number).padStart(2, '0');
   }
 
-  function atualizarContador() {
-    var agora = new Date();
-    var diferenca = Math.max(0, agora.getTime() - referenciaRelacionamento.getTime());
+  function updateCounter() {
+    var now = new Date();
+    var diff = Math.max(0, now.getTime() - relationshipStart.getTime());
 
-    var totalSegundos = Math.floor(diferenca / 1000);
-    var dias = Math.floor(totalSegundos / 86400);
-    var horas = Math.floor((totalSegundos % 86400) / 3600);
-    var minutos = Math.floor((totalSegundos % 3600) / 60);
-    var segundos = totalSegundos % 60;
+    var totalSeconds = Math.floor(diff / 1000);
+    var days = Math.floor(totalSeconds / 86400);
+    var hours = Math.floor((totalSeconds % 86400) / 3600);
+    var minutes = Math.floor((totalSeconds % 3600) / 60);
+    var seconds = totalSeconds % 60;
 
-    var elementoDias = document.getElementById('contador-dias');
-    var elementoHoras = document.getElementById('contador-horas');
-    var elementoMinutos = document.getElementById('contador-minutos');
-    var elementoSegundos = document.getElementById('contador-segundos');
+    var daysElement = document.getElementById('counter-days');
+    var hoursElement = document.getElementById('counter-hours');
+    var minutesElement = document.getElementById('counter-minutes');
+    var secondsElement = document.getElementById('counter-seconds');
 
-    if (elementoDias) elementoDias.textContent = String(dias);
-    if (elementoHoras) elementoHoras.textContent = formatarNumero(horas);
-    if (elementoMinutos) elementoMinutos.textContent = formatarNumero(minutos);
-    if (elementoSegundos) elementoSegundos.textContent = formatarNumero(segundos);
+    if (daysElement) daysElement.textContent = String(days);
+    if (hoursElement) hoursElement.textContent = formatNumber(hours);
+    if (minutesElement) minutesElement.textContent = formatNumber(minutes);
+    if (secondsElement) secondsElement.textContent = formatNumber(seconds);
   }
 
-  function calcularResumoNamoro() {
-    var agora = new Date();
-    var anos = agora.getFullYear() - referenciaRelacionamento.getFullYear();
-    var meses = agora.getMonth() - referenciaRelacionamento.getMonth();
-    var dias = agora.getDate() - referenciaRelacionamento.getDate();
+  function calculateRelationshipSummary() {
+    var now = new Date();
+    var years = now.getFullYear() - relationshipStart.getFullYear();
+    var months = now.getMonth() - relationshipStart.getMonth();
+    var days = now.getDate() - relationshipStart.getDate();
 
-    if (dias < 0) {
-      meses -= 1;
-      var diasNoMesAnterior = new Date(agora.getFullYear(), agora.getMonth(), 0).getDate();
-      dias += diasNoMesAnterior;
+    if (days < 0) {
+      months -= 1;
+      var daysInPreviousMonth = new Date(now.getFullYear(), now.getMonth(), 0).getDate();
+      days += daysInPreviousMonth;
     }
 
-    if (meses < 0) {
-      anos -= 1;
-      meses += 12;
+    if (months < 0) {
+      years -= 1;
+      months += 12;
     }
 
     return {
-      anos: Math.max(0, anos),
-      meses: Math.max(0, meses),
-      dias: Math.max(0, dias)
+      years: Math.max(0, years),
+      months: Math.max(0, months),
+      days: Math.max(0, days)
     };
   }
 
-  function atualizarResumoNamoro() {
-    var resumo = calcularResumoNamoro();
+  function updateRelationshipSummary() {
+    var summary = calculateRelationshipSummary();
 
-    var elementoAnos = document.getElementById('resumo-anos');
-    var elementoMeses = document.getElementById('resumo-meses');
-    var elementoDias = document.getElementById('resumo-dias');
+    var yearsElement = document.getElementById('summary-years');
+    var monthsElement = document.getElementById('summary-months');
+    var daysElement = document.getElementById('summary-days');
 
-    if (elementoAnos) elementoAnos.textContent = String(resumo.anos);
-    if (elementoMeses) elementoMeses.textContent = String(resumo.meses);
-    if (elementoDias) elementoDias.textContent = String(resumo.dias);
+    if (yearsElement) yearsElement.textContent = String(summary.years);
+    if (monthsElement) monthsElement.textContent = String(summary.months);
+    if (daysElement) daysElement.textContent = String(summary.days);
   }
 
-  function atualizarBlocoTempo() {
-    atualizarContador();
-    atualizarResumoNamoro();
+  function updateTimeBlock() {
+    updateCounter();
+    updateRelationshipSummary();
   }
 
-  function inicializarContador() {
-    atualizarBlocoTempo();
-    window.setInterval(atualizarBlocoTempo, 1000);
+  function initCounter() {
+    updateTimeBlock();
+    window.setInterval(updateTimeBlock, 1000);
   }
 
-  window.MemoriasContador = {
-    inicializar: inicializarContador
+  window.MemoriesCounter = {
+    init: initCounter
   };
 })();

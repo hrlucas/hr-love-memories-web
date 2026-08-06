@@ -1,177 +1,177 @@
-﻿(function () {
-  var observadorRevelacao = null;
+(function () {
+  var revealObserver = null;
 
-  function tornarVisivel(elemento) {
-    if (!elemento || elemento.classList.contains('visivel')) {
+  function makeVisible(element) {
+    if (!element || element.classList.contains('visible')) {
       return;
     }
 
-    elemento.classList.add('visivel');
+    element.classList.add('visible');
   }
 
-  function observarElemento(elemento) {
-    if (!elemento || !elemento.classList || !elemento.classList.contains('revelar')) {
+  function observeElement(element) {
+    if (!element || !element.classList || !element.classList.contains('reveal')) {
       return;
     }
 
-    if (!observadorRevelacao) {
-      tornarVisivel(elemento);
+    if (!revealObserver) {
+      makeVisible(element);
       return;
     }
 
-    observadorRevelacao.observe(elemento);
+    revealObserver.observe(element);
   }
 
-  function inicializarRevelacaoPorScroll() {
-    var elementos = document.querySelectorAll('.revelar');
+  function initScrollReveal() {
+    var elements = document.querySelectorAll('.reveal');
 
     if (!('IntersectionObserver' in window)) {
-      elementos.forEach(function (elemento) {
-        tornarVisivel(elemento);
+      elements.forEach(function (element) {
+        makeVisible(element);
       });
       return;
     }
 
-    observadorRevelacao = new IntersectionObserver(function (entradas) {
-      entradas.forEach(function (entrada) {
-        if (entrada.isIntersecting) {
-          tornarVisivel(entrada.target);
-          observadorRevelacao.unobserve(entrada.target);
+    revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          makeVisible(entry.target);
+          revealObserver.unobserve(entry.target);
         }
       });
     }, { threshold: 0.16 });
 
-    elementos.forEach(function (elemento) {
-      observarElemento(elemento);
+    elements.forEach(function (element) {
+      observeElement(element);
     });
 
-    var observadorMutacoes = new MutationObserver(function (mutacoes) {
-      mutacoes.forEach(function (mutacao) {
-        mutacao.addedNodes.forEach(function (noAdicionado) {
-          if (!noAdicionado || noAdicionado.nodeType !== 1) {
+    var mutationObserver = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        mutation.addedNodes.forEach(function (addedNode) {
+          if (!addedNode || addedNode.nodeType !== 1) {
             return;
           }
 
-          if (noAdicionado.matches && noAdicionado.matches('.revelar')) {
-            observarElemento(noAdicionado);
+          if (addedNode.matches && addedNode.matches('.reveal')) {
+            observeElement(addedNode);
           }
 
-          if (noAdicionado.querySelectorAll) {
-            noAdicionado.querySelectorAll('.revelar').forEach(function (elemento) {
-              observarElemento(elemento);
+          if (addedNode.querySelectorAll) {
+            addedNode.querySelectorAll('.reveal').forEach(function (element) {
+              observeElement(element);
             });
           }
         });
       });
     });
 
-    observadorMutacoes.observe(document.body, {
+    mutationObserver.observe(document.body, {
       childList: true,
       subtree: true
     });
   }
 
-  function criarParticulasDeFundo() {
-    var plano = document.getElementById('plano-particulas');
-    if (!plano) {
+  function createBackgroundParticles() {
+    var layer = document.getElementById('particles-layer');
+    if (!layer) {
       return;
     }
 
     var total = window.matchMedia('(max-width: 768px)').matches ? 42 : 78;
-    var fragmento = document.createDocumentFragment();
+    var fragment = document.createDocumentFragment();
 
-    for (var indice = 0; indice < total; indice++) {
-      var particula = document.createElement('span');
-      particula.className = 'particula-luz';
-      particula.style.left = Math.random() * 100 + '%';
-      particula.style.top = Math.random() * 100 + '%';
-      particula.style.animationDelay = (Math.random() * 6).toFixed(2) + 's';
-      particula.style.animationDuration = (6 + Math.random() * 7).toFixed(2) + 's';
-      particula.style.opacity = (0.25 + Math.random() * 0.6).toFixed(2);
-      fragmento.appendChild(particula);
+    for (var index = 0; index < total; index++) {
+      var particle = document.createElement('span');
+      particle.className = 'particle-light';
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.top = Math.random() * 100 + '%';
+      particle.style.animationDelay = (Math.random() * 6).toFixed(2) + 's';
+      particle.style.animationDuration = (6 + Math.random() * 7).toFixed(2) + 's';
+      particle.style.opacity = (0.25 + Math.random() * 0.6).toFixed(2);
+      fragment.appendChild(particle);
     }
 
-    plano.innerHTML = '';
-    plano.appendChild(fragmento);
+    layer.innerHTML = '';
+    layer.appendChild(fragment);
   }
 
-  function preencherCoracoes(container, total) {
+  function fillHearts(container, total) {
     if (!container) {
       return;
     }
 
     container.innerHTML = '';
 
-    var fragmento = document.createDocumentFragment();
+    var fragment = document.createDocumentFragment();
 
-    for (var indice = 0; indice < total; indice++) {
-      var coracao = document.createElement('span');
-      var tamanho = (8 + Math.random() * 16).toFixed(1);
-      var duracao = (8 + Math.random() * 9).toFixed(2);
-      var atraso = (-Math.random() * 14).toFixed(2);
+    for (var index = 0; index < total; index++) {
+      var heart = document.createElement('span');
+      var size = (8 + Math.random() * 16).toFixed(1);
+      var duration = (8 + Math.random() * 9).toFixed(2);
+      var delay = (-Math.random() * 14).toFixed(2);
 
-      coracao.className = 'coracao-flutuante';
-      coracao.style.left = (Math.random() * 100).toFixed(2) + '%';
-      coracao.style.setProperty('--tamanho-coracao', tamanho + 'px');
-      coracao.style.animationDuration = duracao + 's';
-      coracao.style.animationDelay = atraso + 's';
-      coracao.style.opacity = (0.12 + Math.random() * 0.35).toFixed(2);
-      fragmento.appendChild(coracao);
+      heart.className = 'heart-floating';
+      heart.style.left = (Math.random() * 100).toFixed(2) + '%';
+      heart.style.setProperty('--heart-size', size + 'px');
+      heart.style.animationDuration = duration + 's';
+      heart.style.animationDelay = delay + 's';
+      heart.style.opacity = (0.12 + Math.random() * 0.35).toFixed(2);
+      fragment.appendChild(heart);
     }
 
-    container.appendChild(fragmento);
+    container.appendChild(fragment);
   }
 
-  function inicializarCoracoesNasSecoes() {
-    var secoes = document.querySelectorAll('section.secao');
+  function initHeartsInSections() {
+    var sections = document.querySelectorAll('section.section');
     var total = window.matchMedia('(max-width: 768px)').matches ? 16 : 26;
 
-    secoes.forEach(function (secao) {
-      if (secao.id === 'hero') {
+    sections.forEach(function (section) {
+      if (section.id === 'hero') {
         return;
       }
 
-      var container = secao.querySelector('.tempo-coracoes');
+      var container = section.querySelector('.time-hearts');
       if (!container) {
-        container = secao.querySelector('.fundo-coracoes');
+        container = section.querySelector('.background-hearts');
       }
 
       if (!container) {
         container = document.createElement('div');
-        container.className = 'fundo-coracoes';
+        container.className = 'background-hearts';
         container.setAttribute('aria-hidden', 'true');
-        secao.insertBefore(container, secao.firstChild);
+        section.insertBefore(container, section.firstChild);
       }
 
-      preencherCoracoes(container, total);
+      fillHearts(container, total);
     });
   }
 
-  function inicializarParallaxLeve() {
+  function initSubtleParallax() {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       return;
     }
 
-    var ultimoValor = 0;
+    var lastValue = 0;
 
     window.addEventListener('scroll', function () {
-      var deslocamento = window.scrollY * 0.06;
-      if (Math.abs(deslocamento - ultimoValor) > 0.4) {
-        document.documentElement.style.setProperty('--deslocamento-parallax', deslocamento.toFixed(2) + 'px');
-        ultimoValor = deslocamento;
+      var offset = window.scrollY * 0.06;
+      if (Math.abs(offset - lastValue) > 0.4) {
+        document.documentElement.style.setProperty('--parallax-offset', offset.toFixed(2) + 'px');
+        lastValue = offset;
       }
     }, { passive: true });
   }
 
-  function inicializarEfeitos() {
-    criarParticulasDeFundo();
-    inicializarRevelacaoPorScroll();
-    inicializarCoracoesNasSecoes();
-    inicializarParallaxLeve();
+  function initEffects() {
+    createBackgroundParticles();
+    initScrollReveal();
+    initHeartsInSections();
+    initSubtleParallax();
   }
 
-  window.MemoriasEfeitos = {
-    inicializar: inicializarEfeitos,
-    observarRevelacao: observarElemento
+  window.MemoriesEffects = {
+    init: initEffects,
+    observeReveal: observeElement
   };
 })();

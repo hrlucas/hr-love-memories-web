@@ -1,8 +1,8 @@
-﻿(function () {
-  var dadosCartaFallback = {
-    selo: '08 de março — Dia da Mulher',
-    assinatura: 'Com todo o meu amor,\nLucas Hochmann Rosa',
-    paragrafos: [
+(function () {
+  var letterFallbackData = {
+    badge: '08 de março — Dia da Mulher',
+    signature: 'Com todo o meu amor,\nLucas Hochmann Rosa',
+    paragraphs: [
       'Meu amor,',
       'Hoje é o Dia da Mulher, e eu não poderia deixar esse momento passar sem falar de você. Mais do que qualquer data, este dia me faz lembrar da pessoa incrível que você é e da sorte imensa que tenho por caminhar ao seu lado.',
       'Você é uma mulher extraordinária, Mary. Forte, sensível, inteligente, determinada e dona de uma luz que ilumina tudo ao seu redor. Muitas vezes fico apenas observando a forma como você encara a vida, como sonha, como luta pelo que acredita, e isso só aumenta ainda mais a admiração que sinto por você.',
@@ -16,251 +16,251 @@
     ]
   };
 
-  function aplicarCarta(dados) {
-    var selo = document.getElementById('carta-selo');
-    var conteudo = document.getElementById('carta-conteudo');
-    var assinatura = document.getElementById('carta-assinatura');
+  function applyLetter(data) {
+    var badge = document.getElementById('letter-badge');
+    var content = document.getElementById('letter-content');
+    var signature = document.getElementById('letter-signature');
 
-    if (selo && dados.selo) {
-      selo.textContent = dados.selo;
+    if (badge && data.badge) {
+      badge.textContent = data.badge;
     }
 
-    if (conteudo && Array.isArray(dados.paragrafos)) {
-      conteudo.innerHTML = '';
-      dados.paragrafos.forEach(function (paragrafo, indice) {
-        var elementoParagrafo = document.createElement('p');
-        elementoParagrafo.textContent = paragrafo;
-        elementoParagrafo.className = 'carta__paragrafo';
-        elementoParagrafo.style.setProperty('--atraso', indice * 90 + 'ms');
-        conteudo.appendChild(elementoParagrafo);
+    if (content && Array.isArray(data.paragraphs)) {
+      content.innerHTML = '';
+      data.paragraphs.forEach(function (paragraph, index) {
+        var paragraphElement = document.createElement('p');
+        paragraphElement.textContent = paragraph;
+        paragraphElement.className = 'letter__paragraph';
+        paragraphElement.style.setProperty('--delay', index * 90 + 'ms');
+        content.appendChild(paragraphElement);
       });
     }
 
-    if (assinatura && dados.assinatura) {
-      assinatura.textContent = dados.assinatura;
+    if (signature && data.signature) {
+      signature.textContent = data.signature;
     }
   }
 
-  function renderizarCarta() {
+  function renderLetter() {
     fetch('assets/data/letter.json')
-      .then(function (resposta) {
-        if (!resposta.ok) {
-          throw new Error('carta indisponível');
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error('letter unavailable');
         }
-        return resposta.json();
+        return response.json();
       })
-      .then(aplicarCarta)
+      .then(applyLetter)
       .catch(function () {
-        aplicarCarta(dadosCartaFallback);
+        applyLetter(letterFallbackData);
       });
   }
 
-  function configurarEnvelopeCarta() {
-    var botaoAbrir = document.getElementById('botao-abrir-carta');
-    var envelopeCena = document.getElementById('envelope-cena');
-    var secaoCarta = document.getElementById('letter');
-    var carta = document.getElementById('carta');
+  function setupLetterEnvelope() {
+    var openButton = document.getElementById('open-letter-button');
+    var envelopeScene = document.getElementById('envelope-scene');
+    var letterSection = document.getElementById('letter');
+    var letterCard = document.getElementById('letter-card');
 
-    if (!botaoAbrir || !envelopeCena || !carta || !secaoCarta) {
+    if (!openButton || !envelopeScene || !letterCard || !letterSection) {
       return;
     }
 
-    var estadoAberto = false;
-    var temporizadorFechamento = null;
+    var isOpen = false;
+    var closeTimer = null;
 
-    function calcularAlturaEnvelopeAberto() {
-      var eMobile = window.matchMedia('(max-width: 680px)').matches;
-      var minimo = eMobile ? 900 : 1080;
-      var extra = eMobile ? 320 : 390;
-      return Math.max(minimo, carta.scrollHeight + extra);
+    function calculateOpenEnvelopeHeight() {
+      var isMobile = window.matchMedia('(max-width: 680px)').matches;
+      var minimum = isMobile ? 900 : 1080;
+      var extra = isMobile ? 320 : 390;
+      return Math.max(minimum, letterCard.scrollHeight + extra);
     }
 
-    function aplicarAlturaDinamicaAberto() {
-      var altura = calcularAlturaEnvelopeAberto();
-      envelopeCena.style.minHeight = altura + 'px';
+    function applyDynamicOpenHeight() {
+      var height = calculateOpenEnvelopeHeight();
+      envelopeScene.style.minHeight = height + 'px';
     }
 
-    function limparAlturaDinamica() {
-      envelopeCena.style.removeProperty('min-height');
+    function clearDynamicHeight() {
+      envelopeScene.style.removeProperty('min-height');
     }
 
-    function abrirCarta() {
-      if (temporizadorFechamento) {
-        window.clearTimeout(temporizadorFechamento);
-        temporizadorFechamento = null;
+    function openLetter() {
+      if (closeTimer) {
+        window.clearTimeout(closeTimer);
+        closeTimer = null;
       }
 
-      secaoCarta.classList.add('secao--carta-aberta');
-      envelopeCena.classList.remove('envelope-cena--fechando');
-      envelopeCena.classList.add('envelope-cena--aberto');
-      botaoAbrir.textContent = 'Fechar carta';
-      botaoAbrir.setAttribute('aria-pressed', 'true');
-      estadoAberto = true;
+      letterSection.classList.add('section--letter-open');
+      envelopeScene.classList.remove('envelope-scene--closing');
+      envelopeScene.classList.add('envelope-scene--open');
+      openButton.textContent = 'Fechar carta';
+      openButton.setAttribute('aria-pressed', 'true');
+      isOpen = true;
 
       window.setTimeout(function () {
-        aplicarAlturaDinamicaAberto();
+        applyDynamicOpenHeight();
       }, 80);
     }
 
-    function fecharCarta() {
-      secaoCarta.classList.remove('secao--carta-aberta');
-      envelopeCena.classList.add('envelope-cena--fechando');
-      envelopeCena.classList.remove('envelope-cena--aberto');
-      botaoAbrir.textContent = 'Abrir carta';
-      botaoAbrir.setAttribute('aria-pressed', 'false');
-      estadoAberto = false;
-      limparAlturaDinamica();
+    function closeLetter() {
+      letterSection.classList.remove('section--letter-open');
+      envelopeScene.classList.add('envelope-scene--closing');
+      envelopeScene.classList.remove('envelope-scene--open');
+      openButton.textContent = 'Abrir carta';
+      openButton.setAttribute('aria-pressed', 'false');
+      isOpen = false;
+      clearDynamicHeight();
 
-      temporizadorFechamento = window.setTimeout(function () {
-        envelopeCena.classList.remove('envelope-cena--fechando');
+      closeTimer = window.setTimeout(function () {
+        envelopeScene.classList.remove('envelope-scene--closing');
       }, 760);
     }
 
-    function alternarCarta() {
-      if (estadoAberto) {
-        fecharCarta();
+    function toggleLetter() {
+      if (isOpen) {
+        closeLetter();
       } else {
-        abrirCarta();
+        openLetter();
       }
     }
 
-    botaoAbrir.addEventListener('click', alternarCarta);
+    openButton.addEventListener('click', toggleLetter);
 
-    carta.addEventListener('click', function () {
-      if (estadoAberto) {
-        fecharCarta();
+    letterCard.addEventListener('click', function () {
+      if (isOpen) {
+        closeLetter();
       }
     });
 
     window.addEventListener('resize', function () {
-      if (estadoAberto) {
-        aplicarAlturaDinamicaAberto();
+      if (isOpen) {
+        applyDynamicOpenHeight();
       }
     });
   }
 
-  function configurarPortaoInicialEMusica() {
-    var overlay = document.getElementById('introGate');
-    var botaoComecar = document.getElementById('startExperience');
-    var audio = document.getElementById('globalLoveSong');
-    var player = document.getElementById('floatingMusicPlayer');
-    var botaoPlayPause = document.getElementById('playerPlayPause');
-    var botaoVolumeMais = document.getElementById('playerVolumeUp');
-    var botaoVolumeMenos = document.getElementById('playerVolumeDown');
+  function setupIntroGateAndMusic() {
+    var overlay = document.getElementById('intro-gate');
+    var startButton = document.getElementById('start-experience');
+    var audio = document.getElementById('global-love-song');
+    var player = document.getElementById('floating-music-player');
+    var playPauseButton = document.getElementById('player-play-pause');
+    var volumeUpButton = document.getElementById('player-volume-up');
+    var volumeDownButton = document.getElementById('player-volume-down');
 
-    if (!overlay || !botaoComecar || !audio || !player) {
+    if (!overlay || !startButton || !audio || !player) {
       return;
     }
 
-    var experienciaIniciada = false;
+    var experienceStarted = false;
 
-    function atualizarBotaoPlayPause() {
-      if (!botaoPlayPause) {
+    function updatePlayPauseButton() {
+      if (!playPauseButton) {
         return;
       }
 
       if (audio.paused) {
-        botaoPlayPause.textContent = 'Tocar';
-        botaoPlayPause.setAttribute('aria-label', 'Tocar música');
+        playPauseButton.textContent = 'Tocar';
+        playPauseButton.setAttribute('aria-label', 'Tocar música');
       } else {
-        botaoPlayPause.textContent = 'Pausar';
-        botaoPlayPause.setAttribute('aria-label', 'Pausar música');
+        playPauseButton.textContent = 'Pausar';
+        playPauseButton.setAttribute('aria-label', 'Pausar música');
       }
     }
 
-    function ajustarVolume(delta) {
-      var volumeAtual = typeof audio.volume === 'number' ? audio.volume : 0.5;
-      var proximoVolume = Math.max(0, Math.min(1, volumeAtual + delta));
-      audio.volume = Math.round(proximoVolume * 100) / 100;
+    function adjustVolume(delta) {
+      var currentVolume = typeof audio.volume === 'number' ? audio.volume : 0.5;
+      var nextVolume = Math.max(0, Math.min(1, currentVolume + delta));
+      audio.volume = Math.round(nextVolume * 100) / 100;
     }
 
-    function mostrarPlayer() {
-      player.classList.remove('player-musica--oculto');
-      player.classList.add('player-musica--ativo');
+    function showPlayer() {
+      player.classList.remove('player-music--hidden');
+      player.classList.add('player-music--active');
       player.setAttribute('aria-hidden', 'false');
     }
 
-    function revelarExperienciaPrincipal() {
-      overlay.classList.add('intro-overlay--saindo');
+    function revealMainExperience() {
+      overlay.classList.add('intro-overlay--leaving');
       overlay.setAttribute('aria-hidden', 'true');
-      document.body.classList.remove('experiencia-bloqueada');
-      document.body.classList.add('experiencia-liberada');
+      document.body.classList.remove('experience-locked');
+      document.body.classList.add('experience-unlocked');
 
       window.setTimeout(function () {
         overlay.hidden = true;
       }, 900);
     }
 
-    function tocarMusicaInicial() {
-      function tocarNoPonto() {
+    function playInitialSong() {
+      function playFromPoint() {
         audio.currentTime = 23;
         audio.volume = 0.5;
         return audio.play();
       }
 
       if (audio.readyState >= 1) {
-        return tocarNoPonto();
+        return playFromPoint();
       }
 
       return new Promise(function (resolve, reject) {
-        var concluiu = false;
+        var finished = false;
 
-        function finalizarComSucesso() {
-          if (concluiu) {
+        function finishWithSuccess() {
+          if (finished) {
             return;
           }
 
-          concluiu = true;
-          limparEventos();
-          tocarNoPonto().then(resolve).catch(reject);
+          finished = true;
+          clearListeners();
+          playFromPoint().then(resolve).catch(reject);
         }
 
-        function finalizarComErro() {
-          if (concluiu) {
+        function finishWithError() {
+          if (finished) {
             return;
           }
 
-          concluiu = true;
-          limparEventos();
-          reject(new Error('falha ao carregar metadados do áudio'));
+          finished = true;
+          clearListeners();
+          reject(new Error('failed to load audio metadata'));
         }
 
-        function limparEventos() {
-          audio.removeEventListener('loadedmetadata', finalizarComSucesso);
-          audio.removeEventListener('error', finalizarComErro);
+        function clearListeners() {
+          audio.removeEventListener('loadedmetadata', finishWithSuccess);
+          audio.removeEventListener('error', finishWithError);
         }
 
-        audio.addEventListener('loadedmetadata', finalizarComSucesso, { once: true });
-        audio.addEventListener('error', finalizarComErro, { once: true });
+        audio.addEventListener('loadedmetadata', finishWithSuccess, { once: true });
+        audio.addEventListener('error', finishWithError, { once: true });
         audio.load();
       });
     }
 
-    function iniciarExperiencia() {
-      if (experienciaIniciada) {
+    function startExperience() {
+      if (experienceStarted) {
         return;
       }
 
-      experienciaIniciada = true;
-      botaoComecar.disabled = true;
-      botaoComecar.setAttribute('aria-busy', 'true');
+      experienceStarted = true;
+      startButton.disabled = true;
+      startButton.setAttribute('aria-busy', 'true');
 
-      tocarMusicaInicial()
-        .catch(function (erro) {
-          console.warn('Não foi possível iniciar o áudio automaticamente:', erro);
+      playInitialSong()
+        .catch(function (error) {
+          console.warn('Não foi possível iniciar o áudio automaticamente:', error);
         })
         .finally(function () {
-          mostrarPlayer();
-          revelarExperienciaPrincipal();
-          atualizarBotaoPlayPause();
-          botaoComecar.removeAttribute('aria-busy');
+          showPlayer();
+          revealMainExperience();
+          updatePlayPauseButton();
+          startButton.removeAttribute('aria-busy');
         });
     }
 
-    function alternarPlayPause() {
+    function togglePlayPause() {
       if (audio.paused) {
-        audio.play().catch(function (erro) {
-          console.warn('Falha ao retomar áudio:', erro);
+        audio.play().catch(function (error) {
+          console.warn('Falha ao retomar áudio:', error);
         });
         return;
       }
@@ -268,57 +268,57 @@
       audio.pause();
     }
 
-    botaoComecar.addEventListener('click', iniciarExperiencia);
+    startButton.addEventListener('click', startExperience);
 
-    if (botaoPlayPause) {
-      botaoPlayPause.addEventListener('click', alternarPlayPause);
+    if (playPauseButton) {
+      playPauseButton.addEventListener('click', togglePlayPause);
     }
 
-    if (botaoVolumeMais) {
-      botaoVolumeMais.addEventListener('click', function () {
-        ajustarVolume(0.1);
+    if (volumeUpButton) {
+      volumeUpButton.addEventListener('click', function () {
+        adjustVolume(0.1);
       });
     }
 
-    if (botaoVolumeMenos) {
-      botaoVolumeMenos.addEventListener('click', function () {
-        ajustarVolume(-0.1);
+    if (volumeDownButton) {
+      volumeDownButton.addEventListener('click', function () {
+        adjustVolume(-0.1);
       });
     }
 
-    audio.addEventListener('play', atualizarBotaoPlayPause);
-    audio.addEventListener('pause', atualizarBotaoPlayPause);
+    audio.addEventListener('play', updatePlayPauseButton);
+    audio.addEventListener('pause', updatePlayPauseButton);
 
     audio.volume = 0.5;
-    atualizarBotaoPlayPause();
+    updatePlayPauseButton();
   }
 
-  function configurarVoltarAoInicio() {
-    var botaoVoltar = document.getElementById('voltar-inicio');
-    var inicio = document.getElementById('hero');
+  function setupBackToTop() {
+    var backButton = document.getElementById('back-to-top');
+    var start = document.getElementById('hero');
 
-    if (!botaoVoltar || !inicio) {
+    if (!backButton || !start) {
       return;
     }
 
-    botaoVoltar.addEventListener('click', function () {
-      inicio.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    backButton.addEventListener('click', function () {
+      start.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   }
 
-  function inicializarProjeto() {
-    if (window.MemoriasIntro) window.MemoriasIntro.inicializar();
-    if (window.MemoriasTimeline) window.MemoriasTimeline.inicializar();
-    if (window.MemoriasGaleria) window.MemoriasGaleria.inicializar();
-    if (window.MemoriasContador) window.MemoriasContador.inicializar();
-    if (window.MemoriasEfeitos) window.MemoriasEfeitos.inicializar();
-    if (window.MemoriasMeteoros) window.MemoriasMeteoros.inicializar();
+  function initProject() {
+    if (window.MemoriesIntro) window.MemoriesIntro.init();
+    if (window.MemoriesTimeline) window.MemoriesTimeline.init();
+    if (window.MemoriesGallery) window.MemoriesGallery.init();
+    if (window.MemoriesCounter) window.MemoriesCounter.init();
+    if (window.MemoriesEffects) window.MemoriesEffects.init();
+    if (window.MemoriesMeteors) window.MemoriesMeteors.init();
 
-    renderizarCarta();
-    configurarEnvelopeCarta();
-    configurarPortaoInicialEMusica();
-    configurarVoltarAoInicio();
+    renderLetter();
+    setupLetterEnvelope();
+    setupIntroGateAndMusic();
+    setupBackToTop();
   }
 
-  document.addEventListener('DOMContentLoaded', inicializarProjeto);
+  document.addEventListener('DOMContentLoaded', initProject);
 })();

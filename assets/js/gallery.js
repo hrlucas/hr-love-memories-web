@@ -1,9 +1,9 @@
-﻿(function () {
-  var itensGaleria = [];
-  var indiceAtual = 0;
-  var dadosGaleriaAtual = null;
-  var temporizadorResize = null;
-  var frasesPadrao = [
+(function () {
+  var galleryItems = [];
+  var currentIndex = 0;
+  var currentGalleryData = null;
+  var resizeTimer = null;
+  var defaultCaptions = [
     'Meu dia sempre fica melhor quando você está nele.',
     'Alguns momentos passam rápido, mas os que vivo com você ficam para sempre.',
     'Estar ao seu lado é onde meu coração encontra paz.',
@@ -15,51 +15,51 @@
     'Se eu pudesse escolher qualquer momento para reviver, escolheria os que passei ao seu lado.'
   ];
 
-  function construirGaleriaFallback() {
-    var itens = [];
-    for (var indice = 1; indice <= 45; indice++) {
-      itens.push({
-        src: 'assets/img/gallery/provas-do-meu-amor/' + indice + '-prova-do-meu-amor-por-voce.jpg',
-        alt: 'Prova do meu amor por você ' + indice,
-        caption: frasesPadrao[(indice - 1) % frasesPadrao.length]
+  function buildGalleryFallback() {
+    var items = [];
+    for (var index = 1; index <= 45; index++) {
+      items.push({
+        src: 'assets/img/gallery/provas-do-meu-amor/' + index + '-prova-do-meu-amor-por-voce.jpg',
+        alt: 'Prova do meu amor por você ' + index,
+        caption: defaultCaptions[(index - 1) % defaultCaptions.length]
       });
     }
 
     return {
-      subtitulo: 'Cada foto guarda um instante. Cada instante guarda um pedaço do meu amor por você.',
-      itens: itens,
-      frasesLinhas: frasesPadrao
+      subtitle: 'Cada foto guarda um instante. Cada instante guarda um pedaço do meu amor por você.',
+      items: items,
+      captionLines: defaultCaptions
     };
   }
 
-  function atualizarLightbox() {
-    var imagem = document.getElementById('lightbox-imagem');
-    var legenda = document.getElementById('lightbox-legenda');
+  function updateLightbox() {
+    var image = document.getElementById('lightbox-image');
+    var caption = document.getElementById('lightbox-caption');
 
-    if (!imagem || !legenda || !itensGaleria[indiceAtual]) {
+    if (!image || !caption || !galleryItems[currentIndex]) {
       return;
     }
 
-    var item = itensGaleria[indiceAtual];
-    imagem.src = item.src;
-    imagem.alt = item.alt || 'Imagem da nossa galeria';
-    legenda.textContent = item.caption || '';
+    var item = galleryItems[currentIndex];
+    image.src = item.src;
+    image.alt = item.alt || 'Imagem da nossa galeria';
+    caption.textContent = item.caption || '';
   }
 
-  function abrirLightbox(indice) {
+  function openLightbox(index) {
     var lightbox = document.getElementById('lightbox');
-    if (!lightbox || !itensGaleria.length) {
+    if (!lightbox || !galleryItems.length) {
       return;
     }
 
-    indiceAtual = indice;
-    atualizarLightbox();
+    currentIndex = index;
+    updateLightbox();
     lightbox.hidden = false;
     lightbox.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('lightbox-aberto');
+    document.body.classList.add('lightbox-open');
   }
 
-  function fecharLightbox() {
+  function closeLightbox() {
     var lightbox = document.getElementById('lightbox');
     if (!lightbox) {
       return;
@@ -67,64 +67,64 @@
 
     lightbox.hidden = true;
     lightbox.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('lightbox-aberto');
+    document.body.classList.remove('lightbox-open');
   }
 
-  function criarCardGaleria(item, indice) {
+  function createGalleryCard(item, index) {
     var card = document.createElement('button');
     card.type = 'button';
-    card.className = 'galeria__card revelar';
-    card.style.setProperty('--atraso', indice * 38 + 'ms');
+    card.className = 'gallery__card reveal';
+    card.style.setProperty('--delay', index * 38 + 'ms');
 
     card.innerHTML =
-      '<span class="galeria__midia">' +
+      '<span class="gallery__media">' +
       '<img loading="lazy" src="' + item.src + '" alt="' + (item.alt || 'Foto da nossa história') + '">' +
       '</span>';
 
     card.addEventListener('click', function () {
-      abrirLightbox(indice);
+      openLightbox(index);
     });
 
     return card;
   }
 
-  function criarLinhaFrase(texto, indice) {
-    var linha = document.createElement('p');
-    linha.className = 'galeria__frase-linha revelar';
-    linha.setAttribute('data-frase-linha', 'true');
-    linha.style.setProperty('--atraso', indice * 70 + 'ms');
-    linha.textContent = texto;
-    return linha;
+  function createCaptionLine(text, index) {
+    var line = document.createElement('p');
+    line.className = 'gallery__phrase-line reveal';
+    line.setAttribute('data-caption-line', 'true');
+    line.style.setProperty('--delay', index * 70 + 'ms');
+    line.textContent = text;
+    return line;
   }
 
-  function extrairFrasesLinhas(dados) {
-    if (dados && Array.isArray(dados.frasesLinhas) && dados.frasesLinhas.length) {
-      return dados.frasesLinhas.filter(function (frase) {
-        return typeof frase === 'string' && frase.trim();
+  function extractCaptionLines(data) {
+    if (data && Array.isArray(data.captionLines) && data.captionLines.length) {
+      return data.captionLines.filter(function (caption) {
+        return typeof caption === 'string' && caption.trim();
       });
     }
 
-    if (dados && Array.isArray(dados.itens)) {
-      var unicas = [];
-      dados.itens.forEach(function (item) {
+    if (data && Array.isArray(data.items)) {
+      var uniqueCaptions = [];
+      data.items.forEach(function (item) {
         if (!item || !item.caption) {
           return;
         }
 
-        if (unicas.indexOf(item.caption) === -1) {
-          unicas.push(item.caption);
+        if (uniqueCaptions.indexOf(item.caption) === -1) {
+          uniqueCaptions.push(item.caption);
         }
       });
 
-      if (unicas.length) {
-        return unicas;
+      if (uniqueCaptions.length) {
+        return uniqueCaptions;
       }
     }
 
-    return frasesPadrao.slice();
+    return defaultCaptions.slice();
   }
 
-  function obterItensPorLinha() {
+  function getItemsPerRow() {
     if (window.matchMedia('(max-width: 680px)').matches) {
       return 2;
     }
@@ -140,65 +140,65 @@
     return 5;
   }
 
-  function renderizarGaleria(dados) {
+  function renderGallery(data) {
     var container = document.getElementById('gallery-grid');
-    var subtitulo = document.getElementById('galeria-subtitulo');
+    var subtitle = document.getElementById('gallery-subtitle');
 
-    if (!container || !dados || !Array.isArray(dados.itens)) {
+    if (!container || !data || !Array.isArray(data.items)) {
       return;
     }
 
-    dadosGaleriaAtual = dados;
+    currentGalleryData = data;
 
-    if (subtitulo && dados.subtitulo) {
-      subtitulo.textContent = dados.subtitulo;
+    if (subtitle && data.subtitle) {
+      subtitle.textContent = data.subtitle;
     }
 
-    itensGaleria = dados.itens.filter(function (item) {
+    galleryItems = data.items.filter(function (item) {
       return item && item.src;
     });
 
-    var frasesLinhas = extrairFrasesLinhas(dados);
-    var itensPorLinha = obterItensPorLinha();
-    var indiceFrase = 0;
+    var captionLines = extractCaptionLines(data);
+    var itemsPerRow = getItemsPerRow();
+    var captionIndex = 0;
 
     container.innerHTML = '';
 
-    if (itensGaleria.length) {
-      container.appendChild(criarLinhaFrase(frasesLinhas[indiceFrase % frasesLinhas.length], indiceFrase));
+    if (galleryItems.length) {
+      container.appendChild(createCaptionLine(captionLines[captionIndex % captionLines.length], captionIndex));
     }
 
-    itensGaleria.forEach(function (item, indice) {
-      container.appendChild(criarCardGaleria(item, indice));
+    galleryItems.forEach(function (item, index) {
+      container.appendChild(createGalleryCard(item, index));
 
-      var fimLinha = (indice + 1) % itensPorLinha === 0;
-      var aindaTemItens = indice < itensGaleria.length - 1;
+      var isRowEnd = (index + 1) % itemsPerRow === 0;
+      var hasMoreItems = index < galleryItems.length - 1;
 
-      if (fimLinha && aindaTemItens) {
-        indiceFrase += 1;
-        container.appendChild(criarLinhaFrase(frasesLinhas[indiceFrase % frasesLinhas.length], indiceFrase));
+      if (isRowEnd && hasMoreItems) {
+        captionIndex += 1;
+        container.appendChild(createCaptionLine(captionLines[captionIndex % captionLines.length], captionIndex));
       }
     });
   }
 
-  function configurarResponsividadeDasLinhas() {
+  function setupRowResponsiveness() {
     window.addEventListener('resize', function () {
-      if (!dadosGaleriaAtual) {
+      if (!currentGalleryData) {
         return;
       }
 
-      if (temporizadorResize) {
-        window.clearTimeout(temporizadorResize);
+      if (resizeTimer) {
+        window.clearTimeout(resizeTimer);
       }
 
-      temporizadorResize = window.setTimeout(function () {
-        renderizarGaleria(dadosGaleriaAtual);
+      resizeTimer = window.setTimeout(function () {
+        renderGallery(currentGalleryData);
       }, 160);
     });
   }
 
-  function configurarLightbox() {
-    var botaoFechar = document.getElementById('lightbox-fechar');
+  function setupLightbox() {
+    var closeButton = document.getElementById('lightbox-close');
     var lightbox = document.getElementById('lightbox');
 
     if (!lightbox) {
@@ -207,43 +207,43 @@
 
     lightbox.hidden = true;
     lightbox.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('lightbox-aberto');
+    document.body.classList.remove('lightbox-open');
 
-    if (botaoFechar) {
-      botaoFechar.addEventListener('click', fecharLightbox);
+    if (closeButton) {
+      closeButton.addEventListener('click', closeLightbox);
     }
 
-    lightbox.addEventListener('click', function (evento) {
-      if (evento.target === lightbox) {
-        fecharLightbox();
+    lightbox.addEventListener('click', function (event) {
+      if (event.target === lightbox) {
+        closeLightbox();
       }
     });
 
-    window.addEventListener('keydown', function (evento) {
-      if (!lightbox.hidden && evento.key === 'Escape') {
-        fecharLightbox();
+    window.addEventListener('keydown', function (event) {
+      if (!lightbox.hidden && event.key === 'Escape') {
+        closeLightbox();
       }
     });
   }
 
-  function inicializarGaleria() {
-    configurarLightbox();
-    configurarResponsividadeDasLinhas();
+  function initGallery() {
+    setupLightbox();
+    setupRowResponsiveness();
 
     fetch('assets/data/gallery.json')
-      .then(function (resposta) {
-        if (!resposta.ok) {
-          throw new Error('galeria indisponível');
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error('gallery unavailable');
         }
-        return resposta.json();
+        return response.json();
       })
-      .then(renderizarGaleria)
+      .then(renderGallery)
       .catch(function () {
-        renderizarGaleria(construirGaleriaFallback());
+        renderGallery(buildGalleryFallback());
       });
   }
 
-  window.MemoriasGaleria = {
-    inicializar: inicializarGaleria
+  window.MemoriesGallery = {
+    init: initGallery
   };
 })();

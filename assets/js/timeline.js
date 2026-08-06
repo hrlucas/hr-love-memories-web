@@ -1,71 +1,71 @@
 (function () {
-  var dadosTimelineFallback = {
-    subtitulo: 'Algumas datas que mostram o quanto amar você se tornou parte de mim.',
-    eventos: [
-      { data: '10/09/2024', titulo: 'Nosso primeiro encontro', texto: 'Foi nesse dia que tudo começou a ganhar um significado diferente para mim.' },
-      { data: '24/09/2024', titulo: 'Começamos a namorar', texto: 'O dia em que meu coração teve certeza de onde queria ficar.' },
-      { data: '26/10/2024', titulo: 'Conheci seus pais', texto: 'Um passo importante, porque amar você também é honrar tudo o que faz parte da sua vida.' },
-      { data: '26/10/2024', titulo: 'Adotei a Sky', texto: 'Nesse mesmo dia, a Sky entrou na minha vida e passou a carregar um pedacinho da nossa história.' },
-      { data: '24/11/2024', titulo: 'Você conheceu meus pais', texto: 'Ver você se aproximando do meu mundo só me fez imaginar ainda mais o nosso futuro.' },
-      { data: '06/04/2025', titulo: 'Adotei o nosso Bibi', texto: 'Um gatinho preto, cheio de significado, escolhido com amor para fazer parte de nós.' },
-      { data: '14/06/2025', titulo: 'Nosso primeiro Dia dos Namorados', texto: 'Mais um capítulo bonito da história que eu quero continuar escrevendo ao seu lado.' }
+  var timelineFallbackData = {
+    subtitle: 'Algumas datas que mostram o quanto amar vocÃª se tornou parte de mim.',
+    events: [
+      { date: '10/09/2024', title: 'Nosso primeiro encontro', text: 'Foi nesse dia que tudo comeÃ§ou a ganhar um significado diferente para mim.' },
+      { date: '24/09/2024', title: 'ComeÃ§amos a namorar', text: 'O dia em que meu coraÃ§Ã£o teve certeza de onde queria ficar.' },
+      { date: '26/10/2024', title: 'Conheci seus pais', text: 'Um passo importante, porque amar vocÃª tambÃ©m Ã© honrar tudo o que faz parte da sua vida.' },
+      { date: '26/10/2024', title: 'Adotei a Sky', text: 'Nesse mesmo dia, a Sky entrou na minha vida e passou a carregar um pedacinho da nossa histÃ³ria.' },
+      { date: '24/11/2024', title: 'VocÃª conheceu meus pais', text: 'Ver vocÃª se aproximando do meu mundo sÃ³ me fez imaginar ainda mais o nosso futuro.' },
+      { date: '06/04/2025', title: 'Adotei o nosso Bibi', text: 'Um gatinho preto, cheio de significado, escolhido com amor para fazer parte de nÃ³s.' },
+      { date: '14/06/2025', title: 'Nosso primeiro Dia dos Namorados', text: 'Mais um capÃ­tulo bonito da histÃ³ria que eu quero continuar escrevendo ao seu lado.' }
     ],
-    mensagemFinal: 'Desde então, cada uma dessas datas se tornou prova de que amar você é um dos maiores sonhos da minha vida. Obrigado por ser minha mulher.'
+    closingMessage: 'Desde entÃ£o, cada uma dessas datas se tornou prova de que amar vocÃª Ã© um dos maiores sonhos da minha vida. Obrigado por ser minha mulher.'
   };
 
-  function criarCardEvento(evento, indice) {
+  function createEventCard(event, index) {
     var card = document.createElement('article');
-    card.className = 'timeline-escada__card revelar';
-    card.style.setProperty('--atraso', indice * 80 + 'ms');
-    card.style.setProperty('--degrau', String(indice % 3));
+    card.className = 'timeline-stairs__card reveal';
+    card.style.setProperty('--delay', index * 80 + 'ms');
+    card.style.setProperty('--step', String(index % 3));
 
     card.innerHTML =
-      '<p class="timeline__data">' + evento.data + '</p>' +
-      '<h3>' + evento.titulo + '</h3>' +
-      '<p>' + evento.texto + '</p>';
+      '<p class="timeline__date">' + event.date + '</p>' +
+      '<h3>' + event.title + '</h3>' +
+      '<p>' + event.text + '</p>';
 
     return card;
   }
 
-  function renderizarTimeline(dados) {
-    var containerTimeline = document.getElementById('timeline-list');
-    var subtitulo = document.getElementById('timeline-subtitulo');
-    var encerramento = document.getElementById('timeline-encerramento');
+  function renderTimeline(data) {
+    var listContainer = document.getElementById('timeline-list');
+    var subtitle = document.getElementById('timeline-subtitle');
+    var closing = document.getElementById('timeline-closing');
 
-    if (!containerTimeline || !dados || !Array.isArray(dados.eventos)) {
+    if (!listContainer || !data || !Array.isArray(data.events)) {
       return;
     }
 
-    if (subtitulo && dados.subtitulo) {
-      subtitulo.textContent = dados.subtitulo;
+    if (subtitle && data.subtitle) {
+      subtitle.textContent = data.subtitle;
     }
 
-    containerTimeline.innerHTML = '';
-    dados.eventos.forEach(function (evento, indice) {
-      containerTimeline.appendChild(criarCardEvento(evento, indice));
+    listContainer.innerHTML = '';
+    data.events.forEach(function (event, index) {
+      listContainer.appendChild(createEventCard(event, index));
     });
 
-    if (encerramento && dados.mensagemFinal) {
-      encerramento.innerHTML = dados.mensagemFinal.replace(/ /g, '&nbsp;');
-      encerramento.setAttribute('aria-label', dados.mensagemFinal);
+    if (closing && data.closingMessage) {
+      closing.innerHTML = data.closingMessage.replace(/ /g, '&nbsp;');
+      closing.setAttribute('aria-label', data.closingMessage);
     }
   }
 
-  function inicializarTimeline() {
+  function initTimeline() {
     fetch('assets/data/timeline.json')
-      .then(function (resposta) {
-        if (!resposta.ok) {
-          throw new Error('timeline indisponivel');
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error('timeline unavailable');
         }
-        return resposta.json();
+        return response.json();
       })
-      .then(renderizarTimeline)
+      .then(renderTimeline)
       .catch(function () {
-        renderizarTimeline(dadosTimelineFallback);
+        renderTimeline(timelineFallbackData);
       });
   }
 
-  window.MemoriasTimeline = {
-    inicializar: inicializarTimeline
+  window.MemoriesTimeline = {
+    init: initTimeline
   };
 })();

@@ -1,18 +1,18 @@
-﻿(function () {
-  function inicializarIntro() {
-    var botaoAmoTe = document.getElementById('botao-amote');
-    var primeiraSecao = document.getElementById('timeline');
+(function () {
+  function initIntro() {
+    var loveYouButton = document.getElementById('love-you-button');
+    var firstSection = document.getElementById('timeline');
 
-    if (!botaoAmoTe || !primeiraSecao) {
+    if (!loveYouButton || !firstSection) {
       return;
     }
 
-    botaoAmoTe.addEventListener('click', function () {
-      primeiraSecao.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    loveYouButton.addEventListener('click', function () {
+      firstSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   }
 
-  window.MemoriasIntro = {
-    inicializar: inicializarIntro
+  window.MemoriesIntro = {
+    init: initIntro
   };
 })();

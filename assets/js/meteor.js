@@ -1,5 +1,5 @@
-﻿(function () {
-  var FRASES_METEORO = [
+(function () {
+  var METEOR_PHRASES = [
     'Te amo',
     'Minha mulher',
     'Meu amor',
@@ -55,53 +55,53 @@
     'Minha história favorita é a que estou vivendo com você'
   ];
 
-  var intervalos = [];
+  var intervals = [];
 
-  function fraseAleatoria() {
-    return FRASES_METEORO[Math.floor(Math.random() * FRASES_METEORO.length)];
+  function randomPhrase() {
+    return METEOR_PHRASES[Math.floor(Math.random() * METEOR_PHRASES.length)];
   }
 
-  function imagensMeteoro() {
-    var lista = [];
-    for (var indice = 1; indice <= 12; indice++) {
-      lista.push('assets/img/gallery/provas-do-meu-amor/' + indice + '-prova-do-meu-amor-por-voce.jpg');
+  function meteorImages() {
+    var list = [];
+    for (var index = 1; index <= 12; index++) {
+      list.push('assets/img/gallery/provas-do-meu-amor/' + index + '-prova-do-meu-amor-por-voce.jpg');
     }
-    return lista;
+    return list;
   }
 
-  function limparIntervalos() {
-    intervalos.forEach(function (id) {
+  function clearIntervals() {
+    intervals.forEach(function (id) {
       window.clearInterval(id);
     });
-    intervalos = [];
+    intervals = [];
   }
 
-  function criarEstrelas(container) {
+  function createStars(container) {
     var total = window.matchMedia('(max-width: 768px)').matches ? 52 : 104;
     for (var i = 0; i < total; i++) {
-      var estrela = document.createElement('span');
-      estrela.className = 'meteoro-estrela';
-      estrela.style.left = (Math.random() * 100).toFixed(2) + '%';
-      estrela.style.top = (Math.random() * 100).toFixed(2) + '%';
-      estrela.style.opacity = (0.18 + Math.random() * 0.62).toFixed(2);
-      estrela.style.animationDelay = (Math.random() * 6).toFixed(2) + 's';
-      container.appendChild(estrela);
+      var star = document.createElement('span');
+      star.className = 'meteor-star';
+      star.style.left = (Math.random() * 100).toFixed(2) + '%';
+      star.style.top = (Math.random() * 100).toFixed(2) + '%';
+      star.style.opacity = (0.18 + Math.random() * 0.62).toFixed(2);
+      star.style.animationDelay = (Math.random() * 6).toFixed(2) + 's';
+      container.appendChild(star);
     }
   }
 
-  function contarAtivos(container, seletor) {
-    return container.querySelectorAll(seletor).length;
+  function countActive(container, selector) {
+    return container.querySelectorAll(selector).length;
   }
 
-  function criarMeteoroFrase(container) {
-    var limite = window.matchMedia('(max-width: 768px)').matches ? 3 : 4;
-    if (contarAtivos(container, '.meteoro-frase') >= limite) {
+  function createMeteorPhrase(container) {
+    var limit = window.matchMedia('(max-width: 768px)').matches ? 3 : 4;
+    if (countActive(container, '.meteor-phrase') >= limit) {
       return;
     }
 
     var item = document.createElement('span');
-    item.className = 'meteoro-frase';
-    item.textContent = fraseAleatoria();
+    item.className = 'meteor-phrase';
+    item.textContent = randomPhrase();
     item.style.left = (64 + Math.random() * 34).toFixed(2) + '%';
     item.style.top = (-12 + Math.random() * 26).toFixed(2) + '%';
     item.style.animationDuration = (22 + Math.random() * 12).toFixed(2) + 's';
@@ -114,23 +114,23 @@
     });
   }
 
-  function criarMeteoroImagem(container, fotos) {
-    var limite = window.matchMedia('(max-width: 768px)').matches ? 1 : 2;
-    if (contarAtivos(container, '.meteoro-imagem') >= limite) {
+  function createMeteorImage(container, photos) {
+    var limit = window.matchMedia('(max-width: 768px)').matches ? 1 : 2;
+    if (countActive(container, '.meteor-image') >= limit) {
       return;
     }
 
     var wrapper = document.createElement('span');
-    wrapper.className = 'meteoro-imagem';
+    wrapper.className = 'meteor-image';
     wrapper.style.left = (70 + Math.random() * 28).toFixed(2) + '%';
     wrapper.style.top = (-10 + Math.random() * 24).toFixed(2) + '%';
     wrapper.style.animationDuration = (20 + Math.random() * 12).toFixed(2) + 's';
 
-    var imagem = document.createElement('img');
-    imagem.src = fotos[Math.floor(Math.random() * fotos.length)];
-    imagem.alt = 'Memória do nosso amor';
+    var image = document.createElement('img');
+    image.src = photos[Math.floor(Math.random() * photos.length)];
+    image.alt = 'Memória do nosso amor';
 
-    wrapper.appendChild(imagem);
+    wrapper.appendChild(image);
     container.appendChild(wrapper);
 
     wrapper.addEventListener('animationend', function () {
@@ -138,36 +138,36 @@
     });
   }
 
-  function inicializarMeteoros() {
-    var cena = document.getElementById('meteoros-cena');
-    if (!cena) {
+  function initMeteors() {
+    var scene = document.getElementById('meteors-scene');
+    if (!scene) {
       return;
     }
 
-    limparIntervalos();
-    cena.innerHTML = '';
+    clearIntervals();
+    scene.innerHTML = '';
 
-    criarEstrelas(cena);
-    var fotos = imagensMeteoro();
+    createStars(scene);
+    var photos = meteorImages();
 
-    intervalos.push(window.setInterval(function () {
-      criarMeteoroFrase(cena);
+    intervals.push(window.setInterval(function () {
+      createMeteorPhrase(scene);
     }, 4200));
 
-    intervalos.push(window.setInterval(function () {
+    intervals.push(window.setInterval(function () {
       if (Math.random() > 0.26) {
-        criarMeteoroImagem(cena, fotos);
+        createMeteorImage(scene, photos);
       }
     }, 9800));
 
-    for (var indice = 0; indice < 2; indice++) {
+    for (var index = 0; index < 2; index++) {
       window.setTimeout(function () {
-        criarMeteoroFrase(cena);
-      }, indice * 1600);
+        createMeteorPhrase(scene);
+      }, index * 1600);
     }
   }
 
-  window.MemoriasMeteoros = {
-    inicializar: inicializarMeteoros
+  window.MemoriesMeteors = {
+    init: initMeteors
   };
 })();
