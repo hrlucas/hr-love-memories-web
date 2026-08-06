@@ -1,13 +1,13 @@
-# 💌 Love Memories Web
+# 💌 Romantic Experience Web
 
 <p align="center">
-  <a href="https://github.com/hrlucas/hr-love-memories-web">
-    <img src="https://img.shields.io/badge/GitHub-hr--love--memories--web-181717?style=for-the-badge&logo=github" alt="GitHub do repositório">
+  <a href="https://github.com/lucas-hochmann-rosa/romantic-experience-web">
+    <img src="https://img.shields.io/badge/GitHub-romantic--experience--web-181717?style=for-the-badge&logo=github" alt="GitHub do repositório">
   </a>
   <a href="https://www.linkedin.com/in/lucas-hochmann-rosa">
     <img src="https://img.shields.io/badge/LinkedIn-Lucas_Hochmann_Rosa-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn Lucas Hochmann Rosa">
   </a>
-  <a href="https://hrlucas.github.io/hr-love-memories-web/">
+  <a href="https://lucas-hochmann-rosa.github.io/romantic-experience-web/">
     <img src="https://img.shields.io/badge/Página-Web-ff69b4?style=for-the-badge" alt="Página Web">
   </a>
   <a href="./LICENSE">
@@ -23,7 +23,7 @@
 
 ## 📌 Visão Geral
 
-O **Love Memories Web** foi estruturado como um presente digital interativo, com foco em performance, manutenção simples e execução 100% estática.
+O **Romantic Experience Web** foi estruturado como um presente digital interativo, com foco em performance, manutenção simples e execução 100% estática.
 
 Fluxo principal:
 
@@ -65,7 +65,7 @@ Fluxo principal:
 ## 🏗️ Arquitetura
 
 ```text
-love-memories-web/
+romantic-experience-web/
 ├── index.html
 ├── assets/
 │   ├── audio/
@@ -135,8 +135,8 @@ love-memories-web/
 ## 🔧 Instalação
 
 ```bash
-git clone https://github.com/hrlucas/hr-love-memories-web.git
-cd hr-love-memories-web
+git clone https://github.com/lucas-hochmann-rosa/romantic-experience-web.git
+cd romantic-experience-web
 npx serve .
 ```
 
@@ -175,7 +175,7 @@ Este é um presente pessoal, com fotos, áudio e texto voltados a uma pessoa esp
 **Lucas Hochmann Rosa**
 
 - GitHub: <https://github.com/lucas-hochmann-rosa>
-- Página: <https://hrlucas.github.io/hr-love-memories-web/>
+- Página: <https://lucas-hochmann-rosa.github.io/romantic-experience-web/>
 - LinkedIn: <https://www.linkedin.com/in/lucas-hochmann-rosa>
 
 ---

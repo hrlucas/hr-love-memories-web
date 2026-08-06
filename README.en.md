@@ -1,13 +1,13 @@
-# 💌 Love Memories Web
+# 💌 Romantic Experience Web
 
 <p align="center">
-  <a href="https://github.com/hrlucas/hr-love-memories-web">
-    <img src="https://img.shields.io/badge/GitHub-hr--love--memories--web-181717?style=for-the-badge&logo=github" alt="Repository GitHub">
+  <a href="https://github.com/lucas-hochmann-rosa/romantic-experience-web">
+    <img src="https://img.shields.io/badge/GitHub-romantic--experience--web-181717?style=for-the-badge&logo=github" alt="Repository GitHub">
   </a>
   <a href="https://www.linkedin.com/in/lucas-hochmann-rosa">
     <img src="https://img.shields.io/badge/LinkedIn-Lucas_Hochmann_Rosa-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn Lucas Hochmann Rosa">
   </a>
-  <a href="https://hrlucas.github.io/hr-love-memories-web/">
+  <a href="https://lucas-hochmann-rosa.github.io/romantic-experience-web/">
     <img src="https://img.shields.io/badge/Page-Web-ff69b4?style=for-the-badge" alt="Web Page">
   </a>
   <a href="./LICENSE">
@@ -23,7 +23,7 @@
 
 ## 📌 Overview
 
-**Love Memories Web** was built as an interactive digital gift, focused on performance, simple maintenance and a fully static setup.
+**Romantic Experience Web** was built as an interactive digital gift, focused on performance, simple maintenance and a fully static setup.
 
 Main flow:
 
@@ -65,7 +65,7 @@ Main flow:
 ## 🏗️ Architecture
 
 ```text
-love-memories-web/
+romantic-experience-web/
 ├── index.html
 ├── assets/
 │   ├── audio/
@@ -135,8 +135,8 @@ love-memories-web/
 ## 🔧 Installation
 
 ```bash
-git clone https://github.com/hrlucas/hr-love-memories-web.git
-cd hr-love-memories-web
+git clone https://github.com/lucas-hochmann-rosa/romantic-experience-web.git
+cd romantic-experience-web
 npx serve .
 ```
 
@@ -175,7 +175,7 @@ This is a personal gift, with photos, audio and text meant for one specific pers
 **Lucas Hochmann Rosa**
 
 - GitHub: <https://github.com/lucas-hochmann-rosa>
-- Page: <https://hrlucas.github.io/hr-love-memories-web/>
+- Page: <https://lucas-hochmann-rosa.github.io/romantic-experience-web/>
 - LinkedIn: <https://www.linkedin.com/in/lucas-hochmann-rosa>
 
 ---
