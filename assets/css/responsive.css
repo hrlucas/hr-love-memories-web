@@ -1,36 +1,36 @@
 ﻿@media (max-width: 1280px) {
-  .galeria {
+  .gallery {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .timeline-escada__card {
+  .timeline-stairs__card {
     grid-column: 1 / span 8;
   }
 
-  .timeline-escada__card:nth-child(even) {
+  .timeline-stairs__card:nth-child(even) {
     grid-column: 5 / span 8;
   }
 }
 
 @media (max-width: 1080px) {
-  .galeria {
+  .gallery {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .contador {
+  .counter {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .secao {
+  .section {
     padding: 6.3rem 1rem;
   }
 
-  .envelope-cena {
+  .envelope-scene {
     margin-top: 1rem;
     min-height: 760px;
   }
 
-  #letter.secao--carta-aberta .envelope-cena {
+  #letter.section--letter-open .envelope-scene {
     margin-top: 4.8rem;
     min-height: 1080px;
   }
@@ -39,21 +39,21 @@
     width: min(640px, 86vw);
   }
 
-  .carta {
+  .letter {
     width: min(92vw, 900px);
     max-height: none;
     overflow: visible;
     transform: translate3d(-50%, 56%, 0) scale(0.95);
   }
 
-  .envelope-cena--aberto .carta {
+  .envelope-scene--open .letter {
     transform: translate3d(-50%, 8%, 0) scale(1);
   }
 }
 
 @media (max-width: 900px) {
   :root {
-    --altura-navbar: 108px;
+    --navbar-height: 108px;
   }
 
   .navbar {
@@ -67,107 +67,107 @@
     justify-content: flex-start;
   }
 
-  .hero__conteudo {
+  .hero__content {
     padding: 6.4rem 1rem 5rem;
   }
 
-  .timeline-escada {
+  .timeline-stairs {
     grid-template-columns: 1fr;
   }
 
-  .timeline-escada::before,
-  .timeline-escada__card::before,
-  .timeline-escada__card::after {
+  .timeline-stairs::before,
+  .timeline-stairs__card::before,
+  .timeline-stairs__card::after {
     display: none;
   }
 
-  .timeline-escada__card,
-  .timeline-escada__card:nth-child(even),
-  .timeline-escada__card:hover,
-  .timeline-escada__card:focus-within {
+  .timeline-stairs__card,
+  .timeline-stairs__card:nth-child(even),
+  .timeline-stairs__card:hover,
+  .timeline-stairs__card:focus-within {
     grid-column: 1;
     margin-top: 0;
     transform: none !important;
   }
 
-  .timeline__encerramento {
+  .timeline__closing {
     font-size: clamp(0.74rem, 2.8vw, 0.9rem);
     white-space: nowrap;
   }
 
-  .resumo-namoro {
+  .summary-relationship {
     gap: 0.75rem;
   }
 
-  .envelope-cena {
+  .envelope-scene {
     min-height: 700px;
   }
 
-  #letter.secao--carta-aberta .envelope-cena {
+  #letter.section--letter-open .envelope-scene {
     margin-top: 4.2rem;
     min-height: 980px;
   }
 
-  .botao-amor--carta {
+  .button-love--letter {
     bottom: 7%;
   }
 
-  .envelope-cena--aberto .botao-amor--carta {
+  .envelope-scene--open .button-love--letter {
     bottom: 2.4%;
   }
 
-  .secao--meteoros {
+  .section--meteors {
     min-height: 100vh;
   }
 }
 
 @media (max-width: 680px) {
-  .secao {
+  .section {
     padding: 5.7rem 0.85rem;
   }
 
-  .hero__subtitulo,
-  .secao__texto {
+  .hero__subtitle,
+  .section__text {
     font-size: 0.98rem;
   }
 
-  .galeria {
+  .gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.75rem;
   }
 
-  .galeria__frase-linha,
-  .galeria > p[data-frase-linha] {
+  .gallery__phrase-line,
+  .gallery > p[data-frase-linha] {
     font-size: 0.96rem;
     gap: 0.65rem;
   }
 
-  .resumo-namoro {
+  .summary-relationship {
     grid-template-columns: 1fr;
   }
 
-  .carta {
+  .letter {
     width: min(94vw, 720px);
     max-height: none;
     overflow: visible;
     padding: 1.2rem 1.05rem;
   }
 
-  .envelope-cena {
+  .envelope-scene {
     min-height: 660px;
   }
 
-  #letter.secao--carta-aberta .envelope-cena {
+  #letter.section--letter-open .envelope-scene {
     margin-top: 3.8rem;
     min-height: 920px;
   }
 
-  .botao-amor--carta {
+  .button-love--letter {
     min-width: 160px;
     bottom: 6%;
   }
 
-  .meteoro-imagem {
+  .meteor-image {
     width: 72px;
   }
 }
@@ -178,36 +178,36 @@
     padding: 0.32rem 0.52rem;
   }
 
-  .hero__conteudo {
+  .hero__content {
     padding-top: 5.6rem;
   }
 
-  .botao-amor,
-  .botao-secundario {
+  .button-love,
+  .button-secondary {
     width: 100%;
     max-width: 290px;
   }
 
-  .contador {
+  .counter {
     grid-template-columns: 1fr 1fr;
   }
 
-  .carta {
+  .letter {
     width: min(95vw, 560px);
     max-height: none;
     overflow: visible;
   }
 
-  .envelope-cena {
+  .envelope-scene {
     min-height: 620px;
   }
 
-  #letter.secao--carta-aberta .envelope-cena {
+  #letter.section--letter-open .envelope-scene {
     margin-top: 3.3rem;
     min-height: 860px;
   }
 
-  .botao-amor--carta {
+  .button-love--letter {
     min-width: 150px;
     bottom: 5.4%;
   }
@@ -221,7 +221,7 @@
     order: 3;
   }
 
-  .player-musica--oculto {
+  .player-music--hidden {
     transform: none;
   }
 
@@ -230,7 +230,7 @@
     padding: 1.5rem 1.25rem;
   }
 
-  .intro-card__frase {
+  .intro-card__phrase {
     font-size: clamp(1.25rem, 4.4vw, 2rem);
   }
 }
@@ -247,12 +247,12 @@
     text-align: center;
   }
 
-  .floating-music-player__controles {
+  .floating-music-player__controls {
     justify-content: center;
     flex-wrap: wrap;
   }
 
-  .intro-card__botao {
+  .intro-card__button {
     width: 100%;
   }
 }

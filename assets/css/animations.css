@@ -1,23 +1,23 @@
-﻿.revelar {
+﻿.reveal {
   opacity: 0;
   transform: translateY(22px);
   transition: opacity 0.8s ease, transform 0.8s ease;
-  transition-delay: var(--atraso, 0ms);
+  transition-delay: var(--delay, 0ms);
 }
 
-.revelar.visivel {
+.reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.particula-luz {
+.particle-light {
   animation-name: particula-flutuante;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
 
-.botao-amor,
-.botao-secundario {
+.button-love,
+.button-secondary {
   animation: pulsar-glow 3.2s ease-in-out infinite;
 }
 

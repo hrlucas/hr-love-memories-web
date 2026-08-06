@@ -7,7 +7,7 @@
 }
 
 :root {
-  --cor-escura: #080b16;
+  --color-dark: #080b16;
 }
 
 html {
@@ -18,7 +18,7 @@ body {
   margin: 0;
   min-height: 100vh;
   width: 100%;
-  background-color: var(--cor-escura);
+  background-color: var(--color-dark);
   overflow-x: hidden;
   overflow-y: auto;
   color: #f3d6e4;
@@ -35,7 +35,7 @@ body {
   isolation: isolate;
 }
 
-.intro-floral__cena {
+.intro-floral__scene {
   position: absolute;
   inset: 0;
   display: flex;
@@ -45,132 +45,132 @@ body {
   pointer-events: none;
 }
 
-.noite {
+.night {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   filter: blur(0.1vmin);
-  background-image: radial-gradient(ellipse at top, transparent 0%, var(--cor-escura)), radial-gradient(ellipse at bottom, var(--cor-escura), rgba(255, 157, 205, 0.2)), repeating-linear-gradient(220deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), repeating-linear-gradient(189deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), repeating-linear-gradient(148deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), linear-gradient(90deg, rgb(255, 122, 191), rgb(240, 240, 240));
+  background-image: radial-gradient(ellipse at top, transparent 0%, var(--color-dark)), radial-gradient(ellipse at bottom, var(--color-dark), rgba(255, 157, 205, 0.2)), repeating-linear-gradient(220deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), repeating-linear-gradient(189deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), repeating-linear-gradient(148deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), linear-gradient(90deg, rgb(255, 122, 191), rgb(240, 240, 240));
 }
 
-.lirios {
+.lilies {
   position: absolute;
   left: 50%;
   bottom: -1vmin;
   transform: translateX(-50%) scale(0.9);
 }
-.lirio {
+.lily {
   position: absolute;
   bottom: 10vmin;
   transform-origin: bottom center;
   z-index: 10;
-  --velocidade-lirio: 0.8s;
+  --lily-speed: 0.8s;
 }
-.lirio--1 {
+.lily--1 {
   -webkit-animation: movendo-lirio-1 4s linear infinite;
           animation: movendo-lirio-1 4s linear infinite;
 }
-.lirio--1 .lirio__haste {
+.lily--1 .lily__stem {
   height: 70vmin;
   -webkit-animation-delay: 0.3s;
           animation-delay: 0.3s;
 }
-.lirio--1 .lirio__haste__folha--1 {
-  -webkit-animation: desabrochar-folha-direita var(--velocidade-lirio) 1.6s backwards;
-          animation: desabrochar-folha-direita var(--velocidade-lirio) 1.6s backwards;
+.lily--1 .lily__stem__leaf--1 {
+  -webkit-animation: desabrochar-folha-direita var(--lily-speed) 1.6s backwards;
+          animation: desabrochar-folha-direita var(--lily-speed) 1.6s backwards;
 }
-.lirio--1 .lirio__haste__folha--2 {
-  -webkit-animation: desabrochar-folha-direita var(--velocidade-lirio) 1.4s backwards;
-          animation: desabrochar-folha-direita var(--velocidade-lirio) 1.4s backwards;
+.lily--1 .lily__stem__leaf--2 {
+  -webkit-animation: desabrochar-folha-direita var(--lily-speed) 1.4s backwards;
+          animation: desabrochar-folha-direita var(--lily-speed) 1.4s backwards;
 }
-.lirio--1 .lirio__haste__folha--3 {
-  -webkit-animation: desabrochar-folha-esquerda var(--velocidade-lirio) 1.2s backwards;
-          animation: desabrochar-folha-esquerda var(--velocidade-lirio) 1.2s backwards;
+.lily--1 .lily__stem__leaf--3 {
+  -webkit-animation: desabrochar-folha-esquerda var(--lily-speed) 1.2s backwards;
+          animation: desabrochar-folha-esquerda var(--lily-speed) 1.2s backwards;
 }
-.lirio--1 .lirio__haste__folha--4 {
-  -webkit-animation: desabrochar-folha-esquerda var(--velocidade-lirio) 1s backwards;
-          animation: desabrochar-folha-esquerda var(--velocidade-lirio) 1s backwards;
+.lily--1 .lily__stem__leaf--4 {
+  -webkit-animation: desabrochar-folha-esquerda var(--lily-speed) 1s backwards;
+          animation: desabrochar-folha-esquerda var(--lily-speed) 1s backwards;
 }
-.lirio--1 .lirio__haste__folha--5 {
-  -webkit-animation: desabrochar-folha-direita var(--velocidade-lirio) 1.8s backwards;
-          animation: desabrochar-folha-direita var(--velocidade-lirio) 1.8s backwards;
+.lily--1 .lily__stem__leaf--5 {
+  -webkit-animation: desabrochar-folha-direita var(--lily-speed) 1.8s backwards;
+          animation: desabrochar-folha-direita var(--lily-speed) 1.8s backwards;
 }
-.lirio--1 .lirio__haste__folha--6 {
-  -webkit-animation: desabrochar-folha-esquerda var(--velocidade-lirio) 2s backwards;
-          animation: desabrochar-folha-esquerda var(--velocidade-lirio) 2s backwards;
+.lily--1 .lily__stem__leaf--6 {
+  -webkit-animation: desabrochar-folha-esquerda var(--lily-speed) 2s backwards;
+          animation: desabrochar-folha-esquerda var(--lily-speed) 2s backwards;
 }
-.lirio--2 {
+.lily--2 {
   left: 50%;
   transform: rotate(20deg);
   -webkit-animation: movendo-lirio-2 4s linear infinite;
           animation: movendo-lirio-2 4s linear infinite;
 }
-.lirio--2 .lirio__haste {
+.lily--2 .lily__stem {
   height: 60vmin;
   -webkit-animation-delay: 0.6s;
           animation-delay: 0.6s;
 }
-.lirio--2 .lirio__haste__folha--1 {
-  -webkit-animation: desabrochar-folha-direita var(--velocidade-lirio) 1.9s backwards;
-          animation: desabrochar-folha-direita var(--velocidade-lirio) 1.9s backwards;
+.lily--2 .lily__stem__leaf--1 {
+  -webkit-animation: desabrochar-folha-direita var(--lily-speed) 1.9s backwards;
+          animation: desabrochar-folha-direita var(--lily-speed) 1.9s backwards;
 }
-.lirio--2 .lirio__haste__folha--2 {
-  -webkit-animation: desabrochar-folha-direita var(--velocidade-lirio) 1.7s backwards;
-          animation: desabrochar-folha-direita var(--velocidade-lirio) 1.7s backwards;
+.lily--2 .lily__stem__leaf--2 {
+  -webkit-animation: desabrochar-folha-direita var(--lily-speed) 1.7s backwards;
+          animation: desabrochar-folha-direita var(--lily-speed) 1.7s backwards;
 }
-.lirio--2 .lirio__haste__folha--3 {
-  -webkit-animation: desabrochar-folha-esquerda var(--velocidade-lirio) 1.5s backwards;
-          animation: desabrochar-folha-esquerda var(--velocidade-lirio) 1.5s backwards;
+.lily--2 .lily__stem__leaf--3 {
+  -webkit-animation: desabrochar-folha-esquerda var(--lily-speed) 1.5s backwards;
+          animation: desabrochar-folha-esquerda var(--lily-speed) 1.5s backwards;
 }
-.lirio--2 .lirio__haste__folha--4 {
-  -webkit-animation: desabrochar-folha-esquerda var(--velocidade-lirio) 1.3s backwards;
-          animation: desabrochar-folha-esquerda var(--velocidade-lirio) 1.3s backwards;
+.lily--2 .lily__stem__leaf--4 {
+  -webkit-animation: desabrochar-folha-esquerda var(--lily-speed) 1.3s backwards;
+          animation: desabrochar-folha-esquerda var(--lily-speed) 1.3s backwards;
 }
-.lirio--3 {
+.lily--3 {
   left: 50%;
   transform: rotate(-15deg);
   -webkit-animation: movendo-lirio-3 4s linear infinite;
           animation: movendo-lirio-3 4s linear infinite;
 }
-.lirio--3 .lirio__haste {
+.lily--3 .lily__stem {
   -webkit-animation-delay: 0.9s;
           animation-delay: 0.9s;
 }
-.lirio--3 .lirio__haste__folha--1 {
-  -webkit-animation: desabrochar-folha-direita var(--velocidade-lirio) 2.5s backwards;
-          animation: desabrochar-folha-direita var(--velocidade-lirio) 2.5s backwards;
+.lily--3 .lily__stem__leaf--1 {
+  -webkit-animation: desabrochar-folha-direita var(--lily-speed) 2.5s backwards;
+          animation: desabrochar-folha-direita var(--lily-speed) 2.5s backwards;
 }
-.lirio--3 .lirio__haste__folha--2 {
-  -webkit-animation: desabrochar-folha-direita var(--velocidade-lirio) 2.3s backwards;
-          animation: desabrochar-folha-direita var(--velocidade-lirio) 2.3s backwards;
+.lily--3 .lily__stem__leaf--2 {
+  -webkit-animation: desabrochar-folha-direita var(--lily-speed) 2.3s backwards;
+          animation: desabrochar-folha-direita var(--lily-speed) 2.3s backwards;
 }
-.lirio--3 .lirio__haste__folha--3 {
-  -webkit-animation: desabrochar-folha-esquerda var(--velocidade-lirio) 2.1s backwards;
-          animation: desabrochar-folha-esquerda var(--velocidade-lirio) 2.1s backwards;
+.lily--3 .lily__stem__leaf--3 {
+  -webkit-animation: desabrochar-folha-esquerda var(--lily-speed) 2.1s backwards;
+          animation: desabrochar-folha-esquerda var(--lily-speed) 2.1s backwards;
 }
-.lirio--3 .lirio__haste__folha--4 {
-  -webkit-animation: desabrochar-folha-esquerda var(--velocidade-lirio) 1.9s backwards;
-          animation: desabrochar-folha-esquerda var(--velocidade-lirio) 1.9s backwards;
+.lily--3 .lily__stem__leaf--4 {
+  -webkit-animation: desabrochar-folha-esquerda var(--lily-speed) 1.9s backwards;
+          animation: desabrochar-folha-esquerda var(--lily-speed) 1.9s backwards;
 }
-.lirio__folhas {
+.lily__leaves {
   position: relative;
   -webkit-animation: desabrochar-lirio 2s backwards;
           animation: desabrochar-lirio 2s backwards;
 }
-.lirio__folhas--1 {
+.lily__leaves--1 {
   -webkit-animation-delay: 1.1s;
           animation-delay: 1.1s;
 }
-.lirio__folhas--2 {
+.lily__leaves--2 {
   -webkit-animation-delay: 1.4s;
           animation-delay: 1.4s;
 }
-.lirio__folhas--3 {
+.lily__leaves--3 {
   -webkit-animation-delay: 1.7s;
           animation-delay: 1.7s;
 }
-.lirio__folhas::after {
+.lily__leaves::after {
   content: "";
   position: absolute;
   left: 0;
@@ -181,7 +181,7 @@ body {
   background-color: #ff9dd1;
   filter: blur(10vmin);
 }
-.lirio__folha {
+.lily__leaf {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -194,16 +194,16 @@ body {
   opacity: 0.9;
   box-shadow: inset 0 0 2vmin rgba(255, 255, 255, 0.5);
 }
-.lirio__folha--1 {
+.lily__leaf--1 {
   transform: translate(-10%, 1%) rotateY(40deg) rotateX(-50deg);
 }
-.lirio__folha--2 {
+.lily__leaf--2 {
   transform: translate(-50%, -4%) rotateX(40deg);
 }
-.lirio__folha--3 {
+.lily__leaf--3 {
   transform: translate(-90%, 0%) rotateY(45deg) rotateX(50deg);
 }
-.lirio__folha--4 {
+.lily__leaf--4 {
   width: 8vmin;
   height: 8vmin;
   transform-origin: bottom left;
@@ -213,7 +213,7 @@ body {
   z-index: 1;
   opacity: 0.8;
 }
-.lirio__miolo-branco {
+.lily__core-white {
   position: absolute;
   left: -3.5vmin;
   top: -3vmin;
@@ -222,7 +222,7 @@ body {
   border-radius: 50%;
   background-color: #fff;
 }
-.lirio__miolo-branco::after {
+.lily__core-white::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -233,7 +233,7 @@ body {
   border-radius: inherit;
   background-image: repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(112.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(112.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(22.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(22.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(157.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), linear-gradient(90deg, rgb(255, 235, 18), rgb(255, 206, 0));
 }
-.lirio__haste {
+.lily__stem {
   height: 55vmin;
   width: 1.5vmin;
   background-image: linear-gradient(to left, rgba(0, 0, 0, 0.2), transparent, rgba(255, 255, 255, 0.2)), linear-gradient(to top, transparent 10%, #8f3a6b, #ff7eb8);
@@ -241,49 +241,49 @@ body {
   -webkit-animation: crescer-caule-lirio 4s backwards;
           animation: crescer-caule-lirio 4s backwards;
 }
-.lirio__haste__folha {
-  --largura: 7vmin;
-  --altura: calc(var(--largura) + 2vmin);
+.lily__stem__leaf {
+  --width: 7vmin;
+  --height: calc(var(--width) + 2vmin);
   position: absolute;
   top: 20%;
   left: 90%;
-  width: var(--largura);
-  height: var(--altura);
-  border-top-right-radius: var(--altura);
-  border-bottom-left-radius: var(--altura);
+  width: var(--width);
+  height: var(--height);
+  border-top-right-radius: var(--height);
+  border-bottom-left-radius: var(--height);
   background-image: linear-gradient(to top, rgba(47, 155, 98, 0.4), #ff7eb8);
 }
-.lirio__haste__folha--1 {
+.lily__stem__leaf--1 {
   transform: rotate(70deg) rotateY(30deg);
 }
-.lirio__haste__folha--2 {
+.lily__stem__leaf--2 {
   top: 45%;
   transform: rotate(70deg) rotateY(30deg);
 }
-.lirio__haste__folha--3, .lirio__haste__folha--4, .lirio__haste__folha--6 {
+.lily__stem__leaf--3, .lily__stem__leaf--4, .lily__stem__leaf--6 {
   border-top-right-radius: 0;
   border-bottom-left-radius: 0;
-  border-top-left-radius: var(--altura);
-  border-bottom-right-radius: var(--altura);
+  border-top-left-radius: var(--height);
+  border-bottom-right-radius: var(--height);
   left: -460%;
   top: 12%;
   transform: rotate(-70deg) rotateY(30deg);
 }
-.lirio__haste__folha--4 {
+.lily__stem__leaf--4 {
   top: 40%;
 }
-.lirio__haste__folha--5 {
+.lily__stem__leaf--5 {
   top: 0;
   transform-origin: left;
   transform: rotate(70deg) rotateY(30deg) scale(0.6);
 }
-.lirio__haste__folha--6 {
+.lily__stem__leaf--6 {
   top: -2%;
   left: -450%;
   transform-origin: right;
   transform: rotate(-70deg) rotateY(30deg) scale(0.6);
 }
-.lirio__brilho {
+.lily__glow {
   position: absolute;
   bottom: 0vmin;
   width: 1vmin;
@@ -294,52 +294,52 @@ body {
   -webkit-animation: brilho-animacao 4s linear infinite backwards;
           animation: brilho-animacao 4s linear infinite backwards;
 }
-.lirio__brilho:nth-child(odd) {
+.lily__glow:nth-child(odd) {
   background-color: #ff8dc5;
 }
-.lirio__brilho--1 {
+.lily__glow--1 {
   left: -2vmin;
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
 }
-.lirio__brilho--2 {
+.lily__glow--2 {
   left: 3vmin;
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
 }
-.lirio__brilho--3 {
+.lily__glow--3 {
   left: -6vmin;
   -webkit-animation-delay: 0.3s;
           animation-delay: 0.3s;
 }
-.lirio__brilho--4 {
+.lily__glow--4 {
   left: 6vmin;
   -webkit-animation-delay: 0.9s;
           animation-delay: 0.9s;
 }
-.lirio__brilho--5 {
+.lily__glow--5 {
   left: -1vmin;
   -webkit-animation-delay: 1.5s;
           animation-delay: 1.5s;
 }
-.lirio__brilho--6 {
+.lily__glow--6 {
   left: -4vmin;
   -webkit-animation-delay: 3s;
           animation-delay: 3s;
 }
-.lirio__brilho--7 {
+.lily__glow--7 {
   left: 3vmin;
   -webkit-animation-delay: 2s;
           animation-delay: 2s;
 }
-.lirio__brilho--8 {
+.lily__glow--8 {
   left: -6vmin;
   -webkit-animation-delay: 3.5s;
           animation-delay: 3.5s;
 }
-.lirio__grama {
-  --cor: #2f9b62;
-  --largura-haste: 1.5vmin;
+.lily__grass {
+  --color: #2f9b62;
+  --stem-width: 1.5vmin;
   position: absolute;
   bottom: 12vmin;
   left: -7vmin;
@@ -350,11 +350,11 @@ body {
   transform-origin: bottom center;
   transform: rotate(-48deg) rotateY(40deg);
 }
-.lirio__grama--1 {
+.lily__grass--1 {
   -webkit-animation: movendo-grama 2s linear infinite;
           animation: movendo-grama 2s linear infinite;
 }
-.lirio__grama--2 {
+.lily__grass--2 {
   left: 2vmin;
   bottom: 10vmin;
   transform: scale(0.5) rotate(75deg) rotateX(10deg) rotateY(-200deg);
@@ -363,34 +363,34 @@ body {
   -webkit-animation: movendo-grama--2 1.5s linear infinite;
           animation: movendo-grama--2 1.5s linear infinite;
 }
-.lirio__grama--topo {
+.lily__grass--top {
   width: 7vmin;
   height: 10vmin;
   border-top-right-radius: 100%;
-  border-right: var(--largura-haste) solid var(--cor);
+  border-right: var(--stem-width) solid var(--color);
   transform-origin: bottom center;
   transform: rotate(-2deg);
 }
-.lirio__grama--base {
+.lily__grass--base {
   margin-top: -2px;
-  width: var(--largura-haste);
+  width: var(--stem-width);
   height: 25vmin;
-  background-image: linear-gradient(to top, transparent, var(--cor));
+  background-image: linear-gradient(to top, transparent, var(--color));
 }
-.lirio__grama__folha {
-  --tamanho: 10vmin;
+.lily__grass__leaf {
+  --size: 10vmin;
   position: absolute;
-  width: calc(var(--tamanho) * 2.1);
-  height: var(--tamanho);
-  border-top-left-radius: var(--tamanho);
-  border-top-right-radius: var(--tamanho);
-  background-image: linear-gradient(to top, transparent, transparent 30%, var(--cor));
+  width: calc(var(--size) * 2.1);
+  height: var(--size);
+  border-top-left-radius: var(--size);
+  border-top-right-radius: var(--size);
+  background-image: linear-gradient(to top, transparent, transparent 30%, var(--color));
   z-index: 100;
 }
-.lirio__grama__folha--1 {
+.lily__grass__leaf--1 {
   top: -6%;
   left: 30%;
-  --tamanho: 6vmin;
+  --size: 6vmin;
   transform: rotate(-20deg);
   -webkit-animation: grama-crescendo-animacao--1 2s 2.6s backwards;
           animation: grama-crescendo-animacao--1 2s 2.6s backwards;
@@ -407,10 +407,10 @@ body {
     transform: rotate(-20deg) scale(0);
   }
 }
-.lirio__grama__folha--2 {
+.lily__grass__leaf--2 {
   top: -5%;
   left: -110%;
-  --tamanho: 6vmin;
+  --size: 6vmin;
   transform: rotate(10deg);
   -webkit-animation: grama-crescendo-animacao--2 2s 2.4s linear backwards;
           animation: grama-crescendo-animacao--2 2s 2.4s linear backwards;
@@ -427,10 +427,10 @@ body {
     transform: rotate(10deg) scale(0);
   }
 }
-.lirio__grama__folha--3 {
+.lily__grass__leaf--3 {
   top: 5%;
   left: 60%;
-  --tamanho: 8vmin;
+  --size: 8vmin;
   transform: rotate(-18deg) rotateX(-20deg);
   -webkit-animation: grama-crescendo-animacao--3 2s 2.2s linear backwards;
           animation: grama-crescendo-animacao--3 2s 2.2s linear backwards;
@@ -447,10 +447,10 @@ body {
     transform: rotate(-18deg) rotateX(-20deg) scale(0);
   }
 }
-.lirio__grama__folha--4 {
+.lily__grass__leaf--4 {
   top: 6%;
   left: -135%;
-  --tamanho: 8vmin;
+  --size: 8vmin;
   transform: rotate(2deg);
   -webkit-animation: grama-crescendo-animacao--4 2s 2s linear backwards;
           animation: grama-crescendo-animacao--4 2s 2s linear backwards;
@@ -467,10 +467,10 @@ body {
     transform: rotate(2deg) scale(0);
   }
 }
-.lirio__grama__folha--5 {
+.lily__grass__leaf--5 {
   top: 20%;
   left: 60%;
-  --tamanho: 10vmin;
+  --size: 10vmin;
   transform: rotate(-24deg) rotateX(-20deg);
   -webkit-animation: grama-crescendo-animacao--5 2s 1.8s linear backwards;
           animation: grama-crescendo-animacao--5 2s 1.8s linear backwards;
@@ -487,10 +487,10 @@ body {
     transform: rotate(-24deg) rotateX(-20deg) scale(0);
   }
 }
-.lirio__grama__folha--6 {
+.lily__grass__leaf--6 {
   top: 22%;
   left: -180%;
-  --tamanho: 10vmin;
+  --size: 10vmin;
   transform: rotate(10deg);
   -webkit-animation: grama-crescendo-animacao--6 2s 1.6s linear backwards;
           animation: grama-crescendo-animacao--6 2s 1.6s linear backwards;
@@ -507,10 +507,10 @@ body {
     transform: rotate(10deg) scale(0);
   }
 }
-.lirio__grama__folha--7 {
+.lily__grass__leaf--7 {
   top: 39%;
   left: 70%;
-  --tamanho: 10vmin;
+  --size: 10vmin;
   transform: rotate(-10deg);
   -webkit-animation: grama-crescendo-animacao--7 2s 1.4s linear backwards;
           animation: grama-crescendo-animacao--7 2s 1.4s linear backwards;
@@ -527,10 +527,10 @@ body {
     transform: rotate(-10deg) scale(0);
   }
 }
-.lirio__grama__folha--8 {
+.lily__grass__leaf--8 {
   top: 40%;
   left: -215%;
-  --tamanho: 11vmin;
+  --size: 11vmin;
   transform: rotate(10deg);
   -webkit-animation: grama-crescendo-animacao--8 2s 1.2s linear backwards;
           animation: grama-crescendo-animacao--8 2s 1.2s linear backwards;
@@ -547,7 +547,7 @@ body {
     transform: rotate(10deg) scale(0);
   }
 }
-.lirio__grama__sobreposicao {
+.lily__grass__overlay {
   position: absolute;
   top: -10%;
   right: 0%;
@@ -557,10 +557,10 @@ body {
   filter: blur(1.5vmin);
   z-index: 100;
 }
-.lirio__galho-longo {
-  --largura: 2vmin;
-  --altura: 6vmin;
-  --cor: #2f9b62;
+.lily__branch-long {
+  --width: 2vmin;
+  --height: 6vmin;
+  --color: #2f9b62;
   position: absolute;
   bottom: 10vmin;
   left: -3vmin;
@@ -588,49 +588,49 @@ body {
     transform: rotate(-32deg) rotateY(-20deg);
   }
 }
-.lirio__galho-longo__topo {
-  top: calc(var(--altura) * -1);
-  width: calc(var(--largura) + 1vmin);
-  height: var(--altura);
+.lily__branch-long__top {
+  top: calc(var(--height) * -1);
+  width: calc(var(--width) + 1vmin);
+  height: var(--height);
   border-top-right-radius: 100%;
-  border-right: 0.7vmin solid var(--cor);
+  border-right: 0.7vmin solid var(--color);
   transform: translate(-0.7vmin, 1vmin);
 }
-.lirio__galho-longo__base {
-  width: var(--largura);
+.lily__branch-long__base {
+  width: var(--width);
   height: 50vmin;
   transform-origin: bottom center;
-  background-image: linear-gradient(to top, transparent 30%, var(--cor));
+  background-image: linear-gradient(to top, transparent 30%, var(--color));
   box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
   -webkit-clip-path: polygon(35% 0, 65% 1%, 100% 100%, 0% 100%);
           clip-path: polygon(35% 0, 65% 1%, 100% 100%, 0% 100%);
 }
-.lirio__galho-direito {
+.lily__branch-right {
   position: absolute;
   bottom: 6vmin;
   left: -2vmin;
   transform-origin: bottom left;
   transform: rotate(20deg);
 }
-.lirio__galho-direito .folha {
+.lily__branch-right .leaf {
   width: 30vmin;
   height: 50vmin;
   border-top-left-radius: 100%;
   border-left: 2vmin solid #267a4a;
-  background-image: linear-gradient(to bottom, transparent, var(--cor-escura) 60%);
+  background-image: linear-gradient(to bottom, transparent, var(--color-dark) 60%);
   -webkit-mask-image: linear-gradient(to top, transparent 30%, #267a4a 60%);
 }
-.lirio__galho-direito--1 {
+.lily__branch-right--1 {
   -webkit-animation: lirio-galho-direito-animacao 2.5s linear infinite;
           animation: lirio-galho-direito-animacao 2.5s linear infinite;
 }
-.lirio__galho-direito--2 {
+.lily__branch-right--2 {
   left: 5vmin;
   transform: rotateY(-180deg);
   -webkit-animation: lirio-galho-direito-animacao--2 3s linear infinite;
           animation: lirio-galho-direito-animacao--2 3s linear infinite;
 }
-.lirio__galho-direito--2 .folha {
+.lily__branch-right--2 .leaf {
   height: 75vmin;
   filter: blur(0.3vmin);
   opacity: 0.8;
@@ -667,7 +667,7 @@ body {
     transform: rotateY(-180deg) rotate(6deg) rotateX(-20deg);
   }
 }
-.lirio__galho-frontal {
+.lily__branch-frontal {
   position: absolute;
   bottom: 6vmin;
   left: 2.5vmin;
@@ -693,47 +693,47 @@ body {
     transform: rotate(-35deg) rotateY(40deg) scale(1.04);
   }
 }
-.lirio__galho-frontal__haste {
+.lily__branch-frontal__stem {
   width: 0.3vmin;
   height: 20vmin;
   background-image: linear-gradient(to top, transparent, #267a4a, transparent 100%);
   position: relative;
 }
-.lirio__galho-frontal__folha-agrupador {
+.lily__branch-frontal__leaf-cluster {
   position: absolute;
   top: 0;
   left: 0;
   transform-origin: bottom left;
   transform: rotate(10deg);
 }
-.lirio__galho-frontal__folha-agrupador:nth-child(even) {
+.lily__branch-frontal__leaf-cluster:nth-child(even) {
   left: 0vmin;
   transform: rotateY(-180deg) rotate(5deg);
   -webkit-animation: lirio__galho-frontal__folha-esquerda-animacao 1s ease-in backwards;
           animation: lirio__galho-frontal__folha-esquerda-animacao 1s ease-in backwards;
 }
-.lirio__galho-frontal__folha-agrupador:nth-child(odd) {
+.lily__branch-frontal__leaf-cluster:nth-child(odd) {
   -webkit-animation: lirio__galho-frontal__folha-animacao 1s ease-in backwards;
           animation: lirio__galho-frontal__folha-animacao 1s ease-in backwards;
 }
-.lirio__galho-frontal__folha-agrupador--1 {
+.lily__branch-frontal__leaf-cluster--1 {
   top: -8vmin;
   transform: scale(0.7);
   -webkit-animation: lirio__galho-frontal__folha-animacao 1s 5.5s ease-in backwards !important;
           animation: lirio__galho-frontal__folha-animacao 1s 5.5s ease-in backwards !important;
 }
-.lirio__galho-frontal__folha-agrupador--2 {
+.lily__branch-frontal__leaf-cluster--2 {
   top: -8vmin;
   transform: rotateY(-180deg) scale(0.7) !important;
   -webkit-animation: lirio__galho-frontal__folha-esquerda-animacao-2 1s 4.6s ease-in backwards !important;
           animation: lirio__galho-frontal__folha-esquerda-animacao-2 1s 4.6s ease-in backwards !important;
 }
-.lirio__galho-frontal__folha-agrupador--3 {
+.lily__branch-frontal__leaf-cluster--3 {
   top: -3vmin;
   -webkit-animation: lirio__galho-frontal__folha-animacao 1s 4.6s ease-in backwards;
           animation: lirio__galho-frontal__folha-animacao 1s 4.6s ease-in backwards;
 }
-.lirio__galho-frontal__folha-agrupador--4 {
+.lily__branch-frontal__leaf-cluster--4 {
   top: -3vmin;
   transform: rotateY(-180deg) scale(0.9) !important;
   -webkit-animation: lirio__galho-frontal__folha-esquerda-animacao-2 1s 4.6s ease-in backwards !important;
@@ -749,33 +749,33 @@ body {
     transform: rotateY(-180deg) scale(0);
   }
 }
-.lirio__galho-frontal__folha-agrupador--5, .lirio__galho-frontal__folha-agrupador--6 {
+.lily__branch-frontal__leaf-cluster--5, .lily__branch-frontal__leaf-cluster--6 {
   top: 2vmin;
 }
-.lirio__galho-frontal__folha-agrupador--7, .lirio__galho-frontal__folha-agrupador--8 {
+.lily__branch-frontal__leaf-cluster--7, .lily__branch-frontal__leaf-cluster--8 {
   top: 6.5vmin;
 }
-.lirio__galho-frontal__folha-agrupador--2 {
+.lily__branch-frontal__leaf-cluster--2 {
   -webkit-animation-delay: 5.2s !important;
           animation-delay: 5.2s !important;
 }
-.lirio__galho-frontal__folha-agrupador--3 {
+.lily__branch-frontal__leaf-cluster--3 {
   -webkit-animation-delay: 4.9s !important;
           animation-delay: 4.9s !important;
 }
-.lirio__galho-frontal__folha-agrupador--5 {
+.lily__branch-frontal__leaf-cluster--5 {
   -webkit-animation-delay: 4.3s !important;
           animation-delay: 4.3s !important;
 }
-.lirio__galho-frontal__folha-agrupador--6 {
+.lily__branch-frontal__leaf-cluster--6 {
   -webkit-animation-delay: 4.1s !important;
           animation-delay: 4.1s !important;
 }
-.lirio__galho-frontal__folha-agrupador--7 {
+.lily__branch-frontal__leaf-cluster--7 {
   -webkit-animation-delay: 3.8s !important;
           animation-delay: 3.8s !important;
 }
-.lirio__galho-frontal__folha-agrupador--8 {
+.lily__branch-frontal__leaf-cluster--8 {
   -webkit-animation-delay: 3.5s !important;
           animation-delay: 3.5s !important;
 }
@@ -799,16 +799,16 @@ body {
     transform: rotateY(-180deg) rotate(5deg) scale(0);
   }
 }
-.lirio__galho-frontal__folha {
+.lily__branch-frontal__leaf {
   width: 10vmin;
   height: 10vmin;
   border-radius: 100% 0% 0% 100%/100% 100% 0% 0%;
   box-shadow: inset 0 2px 1vmin hsla(330deg, 92%, 74%, 0.25);
-  background-image: linear-gradient(to bottom left, transparent, var(--cor-escura)), linear-gradient(to bottom right, #2f9b62 50%, transparent 50%, transparent);
+  background-image: linear-gradient(to bottom left, transparent, var(--color-dark)), linear-gradient(to bottom right, #2f9b62 50%, transparent 50%, transparent);
   -webkit-mask-image: linear-gradient(to bottom right, #2f9b62 50%, transparent 50%, transparent);
   mask-image: linear-gradient(to bottom right, #2f9b62 50%, transparent 50%, transparent);
 }
-.lirio__galho-frente {
+.lily__branch-front {
   position: absolute;
   bottom: -4vmin;
   left: vmin;
@@ -833,7 +833,7 @@ body {
     transform: rotate(4deg);
   }
 }
-.lirio__galho-frente .folha {
+.lily__branch-front .leaf {
   width: 30vmin;
   height: 50vmin;
   border-top-left-radius: 100%;
@@ -842,7 +842,7 @@ body {
   position: relative;
   z-index: 1;
 }
-.lirio__galho-frente__folha {
+.lily__branch-front__leaf {
   position: absolute;
   top: 0;
   left: 0;
@@ -850,10 +850,10 @@ body {
   height: 10vmin;
   border-radius: 100% 0% 0% 100%/100% 100% 0% 0%;
   box-shadow: inset 0 2px 1vmin hsla(330deg, 92%, 74%, 0.25);
-  background-image: linear-gradient(to bottom left, transparent, var(--cor-escura) 98%), linear-gradient(to bottom right, #ff8dc5 45%, transparent 50%, transparent);
+  background-image: linear-gradient(to bottom left, transparent, var(--color-dark) 98%), linear-gradient(to bottom right, #ff8dc5 45%, transparent 50%, transparent);
   -webkit-mask-image: linear-gradient(135deg, #2f9b62 40%, transparent 50%, transparent);
 }
-.lirio__galho-frente__folha--1 {
+.lily__branch-front__leaf--1 {
   left: 20vmin;
   transform: rotate(45deg);
   -webkit-animation: lirio__galho-frente-folha-animacao-1 0.5s 5.2s linear backwards;
@@ -871,28 +871,28 @@ body {
     transform: rotate(45deg) scale(0);
   }
 }
-.lirio__galho-frente__folha--2 {
+.lily__branch-front__leaf--2 {
   left: 12vmin;
   top: -7vmin;
   transform: rotate(25deg) rotateY(-180deg);
   -webkit-animation: lirio__galho-frente-folha-animacao-6 0.5s 5s linear backwards;
           animation: lirio__galho-frente-folha-animacao-6 0.5s 5s linear backwards;
 }
-.lirio__galho-frente__folha--3 {
+.lily__branch-front__leaf--3 {
   left: 15vmin;
   top: 6vmin;
   transform: rotate(55deg);
   -webkit-animation: lirio__galho-frente-folha-animacao-5 0.5s 4.8s linear backwards;
           animation: lirio__galho-frente-folha-animacao-5 0.5s 4.8s linear backwards;
 }
-.lirio__galho-frente__folha--4 {
+.lily__branch-front__leaf--4 {
   left: 6vmin;
   top: -2vmin;
   transform: rotate(25deg) rotateY(-180deg);
   -webkit-animation: lirio__galho-frente-folha-animacao-6 0.5s 4.6s linear backwards;
           animation: lirio__galho-frente-folha-animacao-6 0.5s 4.6s linear backwards;
 }
-.lirio__galho-frente__folha--5 {
+.lily__branch-front__leaf--5 {
   left: 10vmin;
   top: 14vmin;
   transform: rotate(55deg);
@@ -911,7 +911,7 @@ body {
     transform: rotate(55deg) scale(0);
   }
 }
-.lirio__galho-frente__folha--6 {
+.lily__branch-front__leaf--6 {
   left: 0vmin;
   top: 6vmin;
   transform: rotate(25deg) rotateY(-180deg);
@@ -930,7 +930,7 @@ body {
     transform: rotate(25deg) rotateY(-180deg) scale(0);
   }
 }
-.lirio__galho-frente__folha--7 {
+.lily__branch-front__leaf--7 {
   left: 5vmin;
   top: 22vmin;
   transform: rotate(45deg);
@@ -949,7 +949,7 @@ body {
     transform: rotate(45deg) scale(0);
   }
 }
-.lirio__galho-frente__folha--8 {
+.lily__branch-front__leaf--8 {
   left: -4vmin;
   top: 15vmin;
   transform: rotate(15deg) rotateY(-180deg);
@@ -969,67 +969,67 @@ body {
   }
 }
 
-.grupo-folha-longa {
+.group-leaf-long {
   position: absolute;
   bottom: 25vmin;
   left: -42vmin;
   transform-origin: bottom left;
 }
-.grupo-folha-longa--1 {
+.group-leaf-long--1 {
   bottom: 0vmin;
   transform: scale(0.8) rotate(-5deg);
 }
-.grupo-folha-longa--1 .folha {
+.group-leaf-long--1 .leaf {
   -webkit-mask-image: linear-gradient(to top, transparent 40%, #267a4a 80%) !important;
 }
-.grupo-folha-longa--1 .folha--1 {
-  --largura: 5vmin;
-  --altura: 60vmin;
+.group-leaf-long--1 .leaf--1 {
+  --width: 5vmin;
+  --height: 60vmin;
   left: -2vmin;
   transform: rotate(3deg) rotateY(-180deg);
 }
-.grupo-folha-longa--2, .grupo-folha-longa--3 {
+.group-leaf-long--2, .group-leaf-long--3 {
   bottom: -3vmin;
   left: -35vmin;
   transform-origin: center;
   transform: scale(0.6) rotateX(60deg);
 }
-.grupo-folha-longa--2 .folha, .grupo-folha-longa--3 .folha {
+.group-leaf-long--2 .leaf, .group-leaf-long--3 .leaf {
   -webkit-mask-image: linear-gradient(to top, transparent 50%, #267a4a 80%) !important;
 }
-.grupo-folha-longa--2 .folha--1, .grupo-folha-longa--3 .folha--1 {
+.group-leaf-long--2 .leaf--1, .group-leaf-long--3 .leaf--1 {
   left: -1vmin;
   transform: rotateY(-180deg);
 }
-.grupo-folha-longa--3 {
+.group-leaf-long--3 {
   left: -17vmin;
   bottom: 0vmin;
 }
-.grupo-folha-longa--3 .folha {
+.group-leaf-long--3 .leaf {
   -webkit-mask-image: linear-gradient(to top, transparent 40%, #267a4a 80%) !important;
 }
-.grupo-folha-longa--4 {
+.group-leaf-long--4 {
   left: 25vmin;
   bottom: -3vmin;
   transform-origin: center;
   transform: scale(0.6) rotateX(60deg);
 }
-.grupo-folha-longa--4 .folha {
+.group-leaf-long--4 .leaf {
   -webkit-mask-image: linear-gradient(to top, transparent 50%, #267a4a 80%) !important;
 }
-.grupo-folha-longa--5 {
+.group-leaf-long--5 {
   left: 42vmin;
   bottom: 0vmin;
   transform: scale(0.8) rotate(2deg);
 }
-.grupo-folha-longa--6 {
+.group-leaf-long--6 {
   left: 0vmin;
   bottom: -20vmin;
   z-index: 100;
   filter: blur(0.3vmin);
   transform: scale(0.8) rotate(2deg);
 }
-.grupo-folha-longa--7 {
+.group-leaf-long--7 {
   left: 35vmin;
   bottom: 20vmin;
   z-index: -1;
@@ -1037,33 +1037,33 @@ body {
   transform: scale(0.6) rotate(2deg);
   opacity: 0.7;
 }
-.grupo-folha-longa .folha {
-  --largura: 15vmin;
-  --altura: 40vmin;
-  --cor: #1aaa15;
+.group-leaf-long .leaf {
+  --width: 15vmin;
+  --height: 40vmin;
+  --color: #1aaa15;
   position: absolute;
   bottom: 0;
-  width: var(--largura);
-  height: var(--altura);
+  width: var(--width);
+  height: var(--height);
   border-top-left-radius: 100%;
-  border-left: 2vmin solid var(--cor);
-  -webkit-mask-image: linear-gradient(to top, transparent 20%, var(--cor-escura));
+  border-left: 2vmin solid var(--color);
+  -webkit-mask-image: linear-gradient(to top, transparent 20%, var(--color-dark));
   transform-origin: bottom center;
 }
-.grupo-folha-longa .folha--0 {
+.group-leaf-long .leaf--0 {
   left: 2vmin;
   -webkit-animation: folha-animacao-1 4s linear infinite;
           animation: folha-animacao-1 4s linear infinite;
 }
-.grupo-folha-longa .folha--1 {
-  --largura: 5vmin;
-  --altura: 60vmin;
+.group-leaf-long .leaf--1 {
+  --width: 5vmin;
+  --height: 60vmin;
   -webkit-animation: folha-animacao-1 4s linear infinite;
           animation: folha-animacao-1 4s linear infinite;
 }
-.grupo-folha-longa .folha--2 {
-  --largura: 10vmin;
-  --altura: 40vmin;
+.group-leaf-long .leaf--2 {
+  --width: 10vmin;
+  --height: 40vmin;
   left: -0.5vmin;
   bottom: 5vmin;
   transform-origin: bottom left;
@@ -1071,9 +1071,9 @@ body {
   -webkit-animation: folha-animacao-2 3s linear infinite;
           animation: folha-animacao-2 3s linear infinite;
 }
-.grupo-folha-longa .folha--3 {
-  --largura: 5vmin;
-  --altura: 30vmin;
+.group-leaf-long .leaf--3 {
+  --width: 5vmin;
+  --height: 30vmin;
   left: -1vmin;
   bottom: 3.2vmin;
   transform-origin: bottom left;
@@ -1131,9 +1131,9 @@ body {
     transform: rotate(-20deg) rotateY(-180deg);
   }
 }
-.crescer-animacao {
-  -webkit-animation: crescer-animacao 2s var(--atraso) backwards;
-          animation: crescer-animacao 2s var(--atraso) backwards;
+.grow-animation {
+  -webkit-animation: crescer-animacao 2s var(--delay) backwards;
+          animation: crescer-animacao 2s var(--delay) backwards;
 }
 
 @-webkit-keyframes crescer-animacao {
@@ -1323,7 +1323,7 @@ body {
     transform: scale(0.5) rotate(79deg) rotateX(10deg) rotateY(-200deg);
   }
 }
-.grama-crescendo {
+.grass-growing {
   -webkit-animation: grama-crescendo-animacao 1s 2s backwards;
           animation: grama-crescendo-animacao 1s 2s backwards;
 }
@@ -1342,37 +1342,37 @@ body {
 .conteiner * {
   -webkit-animation-play-state: paused !important;
           animation-play-state: paused !important;
-}/*# sourceMappingURL=main.css.map */
+}
 
 
 /* Ajuste de ritmo: crescimento floral mais lento */
-.lirio {
-  --velocidade-lirio: 1.35s;
+.lily {
+  --lily-speed: 1.35s;
 }
 
-.lirio__folhas {
+.lily__leaves {
   -webkit-animation-duration: 3.4s !important;
           animation-duration: 3.4s !important;
 }
 
-.lirio__haste {
+.lily__stem {
   -webkit-animation-duration: 5.8s !important;
           animation-duration: 5.8s !important;
 }
 
-.lirio__grama__folha {
+.lily__grass__leaf {
   -webkit-animation-duration: 2.8s !important;
           animation-duration: 2.8s !important;
 }
 
-.grama-crescendo {
+.grass-growing {
   -webkit-animation-duration: 1.8s !important;
           animation-duration: 1.8s !important;
   -webkit-animation-delay: 2.6s !important;
           animation-delay: 2.6s !important;
 }
 
-.crescer-animacao {
+.grow-animation {
   -webkit-animation-duration: 2.9s !important;
           animation-duration: 2.9s !important;
 }
