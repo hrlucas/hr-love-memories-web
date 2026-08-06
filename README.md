@@ -1,19 +1,21 @@
-﻿# 🚀 hr-love-memories-web
+# 💌 Love Memories Web
 
 <p align="center">
-  <a href="https://github.com/hrlucas">
-    <img src="https://img.shields.io/badge/GitHub-hrlucas-181717?style=for-the-badge&logo=github" alt="GitHub hrlucas">
+  <a href="https://github.com/hrlucas/hr-love-memories-web">
+    <img src="https://img.shields.io/badge/GitHub-hr--love--memories--web-181717?style=for-the-badge&logo=github" alt="GitHub do repositório">
   </a>
-  <a href="https://www.linkedin.com/in/lucas-hochmann-rosa-456bb7339/">
+  <a href="https://www.linkedin.com/in/lucas-hochmann-rosa">
     <img src="https://img.shields.io/badge/LinkedIn-Lucas_Hochmann_Rosa-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn Lucas Hochmann Rosa">
   </a>
-    <a href="https://hrlucas.github.io/hr-love-memories-web/">
+  <a href="https://hrlucas.github.io/hr-love-memories-web/">
     <img src="https://img.shields.io/badge/Página-Web-ff69b4?style=for-the-badge" alt="Página Web">
   </a>
-  <a href="./LICENCE">
+  <a href="./LICENSE">
     <img src="https://img.shields.io/badge/Licença-MIT-2ea44f?style=for-the-badge" alt="Licença MIT">
   </a>
 </p>
+
+<p align="center">🇧🇷 Português · <a href="README.en.md">🇺🇸 English</a></p>
 
 > Experiência romântica que fiz para Maria Paula Rossetti Siqueira, estática em HTML, CSS/SCSS e JavaScript puro, com estética noturna, narrativa em capítulos e abertura floral cinematográfica.
 
@@ -21,7 +23,7 @@
 
 ## 📌 Visão Geral
 
-O **hr-love-memories-web** foi estruturado como um presente digital interativo, com foco em performance, manutenção simples e execução 100% estática.
+O **Love Memories Web** foi estruturado como um presente digital interativo, com foco em performance, manutenção simples e execução 100% estática.
 
 Fluxo principal:
 
@@ -32,7 +34,7 @@ Fluxo principal:
 
 ---
 
-## 🧠 Funcionalidades
+## ✨ Funcionalidades
 
 - Abertura floral integrada diretamente à hero principal no index.
 - Navegação por âncoras (`Início`, `História`, `Galeria`, `Tempo`, `Carta`, `Meteoros`).
@@ -45,19 +47,36 @@ Fluxo principal:
 
 ---
 
-## 🏗️ Estrutura do Projeto
+## 🧭 Sumário
+
+- [Arquitetura](#-arquitetura)
+- [Tecnologias](#-tecnologias)
+- [Regras de construção do projeto](#-regras-de-construção-do-projeto)
+- [Requisitos](#-requisitos)
+- [Instalação](#-instalação)
+- [Execução](#-execução)
+- [Publicação Estática (GitHub Pages)](#-publicação-estática-github-pages)
+- [Avisos](#-avisos)
+- [Autor](#-autor)
+- [Licença](#-licença)
+
+---
+
+## 🏗️ Arquitetura
 
 ```text
-hr-love-memories-web/
+love-memories-web/
 ├── index.html
 ├── assets/
 │   ├── audio/
 │   │   └── Di Paullo e Paulino - No céu dos braços teus.mp3
 │   ├── css/
-│   │   ├── main.css
-│   │   ├── animations.css
-│   │   ├── sections.css
-│   │   └── responsive.css
+│   │   ├── main.css                # Compilado a partir de assets/scss/main.scss
+│   │   ├── sections.css            # CSS puro, mantido a mão
+│   │   ├── animations.css          # CSS puro, mantido a mão
+│   │   └── responsive.css          # CSS puro, mantido a mão
+│   ├── scss/
+│   │   └── main.scss               # Única fonte Sass real do projeto
 │   ├── data/
 │   │   ├── timeline.json
 │   │   ├── gallery.json
@@ -75,34 +94,45 @@ hr-love-memories-web/
 │       ├── counter.js
 │       ├── effects.js
 │       └── meteor.js
-├── styles/
-│   └── scss/
-│       ├── main.scss
-│       ├── _variables.scss
-│       ├── _base.scss
-│       ├── _intro.scss
-│       ├── _timeline.scss
-│       ├── _gallery.scss
-│       ├── _counter.scss
-│       ├── _letter.scss
-│       ├── _effects.scss
-│       └── _responsive.scss
-├── LICENCE
+├── LICENSE
 └── README.md
 ```
 
+### Organização
+
+- **`index.html`** → estrutura única de todas as seções da experiência
+- **`assets/js/`** → um módulo por seção (`window.MemoriesX.init()`), orquestrados por `main.js`
+- **`assets/data/`** → conteúdo dinâmico (timeline, galeria, carta) consumido via `fetch`, com fallback local em caso de falha
+- **`assets/scss/main.scss`** → única fonte Sass; os demais arquivos em `assets/css/` são CSS puro, escritos e mantidos diretamente (sem fonte Sass)
+
 ---
 
-## 🛠️ Tecnologias
+## 🧰 Tecnologias
 
 - HTML5 semântico
-- CSS3 + SCSS modular
-- JavaScript puro
+- CSS3 + Sass (`main.scss`, compilado localmente - por exemplo, com a extensão "Live Sass Compile" do VS Code ou `npx sass`)
+- JavaScript puro (sem framework, sem build step)
 - JSON local para conteúdo dinâmico
 
 ---
 
-## ▶️ Execução Local
+## 📐 Regras de construção do projeto
+
+- Identificadores, classes, IDs, chaves de JSON e nomes de função ficam em inglês.
+- Todo o texto visível (títulos, botões, frases da carta, legendas) fica em português: é a experiência em si, escrita para uma pessoa específica.
+- Comentários no código, quando existirem, ficam em português e reservados para decisões não óbvias.
+- Nenhum passo de build é necessário para rodar o site - só o Sass precisa ser compilado manualmente ao editar `main.scss`.
+
+---
+
+## ⚙️ Requisitos
+
+- Qualquer servidor HTTP estático para desenvolvimento local (ex.: `npx serve`)
+- Node.js apenas se for recompilar `assets/scss/main.scss` (via `npx sass`)
+
+---
+
+## 🔧 Instalação
 
 ```bash
 git clone https://github.com/hrlucas/hr-love-memories-web.git
@@ -116,24 +146,44 @@ Acesse:
 
 ---
 
-## 🌐 Publicação Estática (GitHub Pages)
+## ▶️ Execução
 
-O projeto está pronto para publicação como site estático.
+Para recompilar o CSS principal após alterar `assets/scss/main.scss`:
+
+```bash
+npx sass assets/scss/main.scss assets/css/main.css
+```
+
+Os demais arquivos em `assets/css/` (`sections.css`, `animations.css`, `responsive.css`) são CSS puro e podem ser editados diretamente, sem compilação.
 
 ---
 
-## 📄 Licença
+## 🌐 Publicação Estática (GitHub Pages)
 
-Licenciado sob MIT. Você pode usar, modificar e distribuir, mantendo o aviso de copyright e atribuindo crédito a **Lucas Hochmann Rosa / hrlucas.dev**.
+O projeto é publicado como site estático diretamente pelo GitHub Pages, a partir da branch `develop`.
 
-Consulte [LICENCE](./LICENCE).
+---
+
+## ⚠️ Avisos
+
+Este é um presente pessoal, com fotos, áudio e texto voltados a uma pessoa específica. O código é aberto para consulta e reaproveitamento da estrutura, mas o conteúdo (fotos, carta, frases) é particular.
 
 ---
 
 ## 👨‍💻 Autor
 
-**Lucas Hochmann Rosa / hrlucas.dev**
+**Lucas Hochmann Rosa**
 
-- GitHub: https://github.com/hrlucas
-- Pages: https://hrlucas.github.io/hr-love-memories-web/
-- LinkedIn: https://www.linkedin.com/in/lucas-hochmann-rosa-456bb7339/
+- GitHub: <https://github.com/lucas-hochmann-rosa>
+- Página: <https://hrlucas.github.io/hr-love-memories-web/>
+- LinkedIn: <https://www.linkedin.com/in/lucas-hochmann-rosa>
+
+---
+
+## 📄 Licença
+
+Licenciado sob MIT. Sinta-se livre para usar, modificar e distribuir, mantendo o aviso de copyright e atribuindo crédito a **Lucas Hochmann Rosa**.
+
+Consulte [LICENSE](./LICENSE).
+
+---
