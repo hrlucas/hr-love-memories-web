@@ -17,7 +17,7 @@
 
 <p align="center">🇧🇷 Português · <a href="README.en.md">🇺🇸 English</a></p>
 
-> Experiência romântica que fiz para Maria Paula Rossetti Siqueira, estática em HTML, CSS/SCSS e JavaScript puro, com estética noturna, narrativa em capítulos e abertura floral cinematográfica.
+> Experiência romântica que fiz para Maria Paula Rossetti Siqueira, estática em HTML, CSS/SCSS e JavaScript puro, com estética noturna, narrativa em capítulos e abertura floral.
 
 ---
 

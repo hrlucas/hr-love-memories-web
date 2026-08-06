@@ -17,7 +17,7 @@
 
 <p align="center"><a href="README.md">🇧🇷 Português</a> · 🇺🇸 English</p>
 
-> A romantic experience I built for Maria Paula Rossetti Siqueira - static HTML, CSS/SCSS and vanilla JavaScript, with a nighttime aesthetic, chapter-based storytelling and a cinematic floral opening.
+> Romantic experience I created for Maria Paula Rossetti Siqueira, built as a static website using HTML, CSS/SCSS, and vanilla JavaScript, featuring a nighttime aesthetic, a chapter-based narrative, and a floral opening animation.
 
 ---
 
